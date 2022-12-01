@@ -9,6 +9,8 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  config.assets.precompile += ['graphiql/rails/application.js', 'graphiql/rails/application.css']
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
