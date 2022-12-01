@@ -5,7 +5,7 @@ class CreateSqueaks < ActiveRecord::Migration[5.2]
       t.integer :reports, default: 0
       t.integer :nuts, default: 0
       t.boolean :approved
-      t.belongs_to :users, foreign_key: true
+      t.belongs_to :user, foreign_key: true
 
       t.timestamps
     end

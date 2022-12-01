@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 2022_12_01_215925) do
     t.integer "reports", default: 0
     t.integer "nuts", default: 0
     t.boolean "approved"
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_squeaks_on_users_id"
+    t.index ["user_id"], name: "index_squeaks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,5 +33,5 @@ ActiveRecord::Schema.define(version: 2022_12_01_215925) do
     t.boolean "is_admin", default: false
   end
 
-  add_foreign_key "squeaks", "users", column: "users_id"
+  add_foreign_key "squeaks", "users"
 end

@@ -1,4 +1,4 @@
 class Squeak < ApplicationRecord
-  belongs_to :User
-  validates
+  belongs_to :user
+
 end
