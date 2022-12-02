@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
         expect(users[0].followers).to be_empty
         users[1].follow(users[0])
         expect(users[0].followers.include?(users[1])).to be(true)
-        
+
         users[1].unfollow(users[0])
         expect(users[0].followers).to be_empty
       end
