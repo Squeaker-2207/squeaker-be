@@ -19,15 +19,14 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - uses: Borales/actions-yarn@v2.3.0
         with:
-          node-version: 16
-          cache: yarn
+          cmd: install
 
-      - name: Install packages
+      - name: Install Dependencies
         run: |
-          yarn install --pure-lockfile
+          sudo apt install -yqq libpq-dev
+          gem install bundler
 
       - name: Run linters
         run: |
@@ -62,20 +61,15 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - uses: Borales/actions-yarn@v2.3.0
         with:
-          node-version: 16
-          cache: yarn
-
-      - name: Install packages
-        run: |
-          yarn install --pure-lockfile
+          cmd: install
 
       - name: Install Dependencies
         run: |
           sudo apt install -yqq libpq-dev
           gem install bundler
+
 
       - name: Install Gems
         run: |
