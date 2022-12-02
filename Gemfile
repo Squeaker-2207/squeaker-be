@@ -34,12 +34,12 @@ gem 'graphql'
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :test do 
   gem 'vcr'
   gem 'webmock'
-  gem 'factory_bot_rails'
   gem 'faker'
   gem 'simplecov'
   gem 'shoulda-matchers' 
@@ -53,5 +53,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 

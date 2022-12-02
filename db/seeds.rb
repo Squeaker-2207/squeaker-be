@@ -9,3 +9,4 @@
 5.times do |i|
   User.create(username: "User #{i + 1}", is_admin: false)
 end
+
