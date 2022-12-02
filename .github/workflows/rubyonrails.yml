@@ -33,14 +33,12 @@ jobs:
         with:
           cmd: install
           
-      - name: Wait for DB
-        run: dockerize -wait tcp://localhost:5432 -timeout 1m
 
       - name: Setup test database
         env:
           RAILS_ENV: test
           PGHOST: localhost
-          PGUSER: myapp
+          PGUSER: squeakr_be
         run: |
           bin/rails db:{drop,create,migrate} --trace
 
