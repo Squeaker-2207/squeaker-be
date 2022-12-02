@@ -7,111 +7,37 @@ on:
     branches: [ main ]
 
 jobs:
-  linters:
-    name: Linters
+  test:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Ruby and install gems
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-
-      - uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: install
-
-      - name: Install Dependencies
-        run: |
-          sudo apt install -yqq libpq-dev
-          gem install bundler
-
-      - name: Run linters
-        run: |
-          bin/rubocop --parallel
-          bin/stylelint
-          bin/prettier
-          bin/eslint
-
-      - name: Run security checks
-        run: |
-          bin/bundler-audit --update
-          bin/brakeman -q -w2
-
-  tests:
-    name: Tests
-    runs-on: ubuntu-latest
+    
     services:
       postgres:
-        image: postgres:14.4
+        image: postgres:14
         env:
           POSTGRES_USER: postgres
-          POSTGRES_DB: squeakr-be_test
-          POSTGRES_PASSWORD: password
-        ports: ["5432:5432"]
-
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options:
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Ruby and install gems
-        uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
         with:
-          bundler-cache: true
-
-      - uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: install
-
-      - name: Install Dependencies
-        run: |
-          sudo apt install -yqq libpq-dev
-          gem install bundler
-
-
-      - name: Install Gems
-        run: |
-          bundle install
-      - name: Setup database
+          ruby-version: 2.7.4
+      - name: Build and run test
         env:
-          PG_DATABASE: postgres
-          PG_HOST: localhost
-          PG_USER: postgres
-          PG_PASSWORD: password
+          DATABASE_URL: postgres://postgres:@localhost:5432/test
           RAILS_ENV: test
-          WITH_COVERAGE: true
-          DISABLE_SPRING: 1
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         run: |
-          bundle exec rails db:prepare
-          bundle exec rake test
-          
-      - name: Setup database
-        env:
-          PG_DATABASE: postgres
-          PG_HOST: localhost
-          PG_USER: postgres
-          PG_PASSWORD: password
-          RAILS_ENV: test
-          WITH_COVERAGE: true
-          DISABLE_SPRING: 1
-        run: |
-          bundle exec rails db:prepare
-          bundle exec rake test
-          
-      - name: Build and test with RSpec
-        env:
-          PG_DATABASE: postgres
-          PG_HOST: localhost
-          PG_USER: postgres
-          PG_PASSWORD: password
-          RAILS_ENV: test
-        run: |
-          bundle exec rspec spec
-          
-      - name: Create Coverage Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: code-coverage
-          path: coverage/
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler:1.17.3
+          bundle install --jobs 4 --retry 3
+          bundle exec rails db:create
+          bundle exec rails db:migrate
+          RAILS_ENV=test bundle exec rake
