@@ -39,3 +39,14 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
+        
+  deploy:
+    runs-on: ubuntu-latest
+    env: 
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only
+        
+    
