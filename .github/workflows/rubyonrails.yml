@@ -39,7 +39,7 @@ jobs:
           PGHOST: localhost
           PGUSER: myapp
         run: |
-          bin/rails db:{create,migrate} --trace
+          bin/rails db:{drop,create,migrate} --trace
 
       - name: Run tests
         run: bin/rspec
