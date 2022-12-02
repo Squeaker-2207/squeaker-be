@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_01_215925) do
+ActiveRecord::Schema.define(version: 2022_12_02_043614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
 
   create_table "squeaks", force: :cascade do |t|
     t.string "content"
@@ -31,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_12_01_215925) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_admin", default: false
+    t.string "avatar"
   end
 
   add_foreign_key "squeaks", "users"
