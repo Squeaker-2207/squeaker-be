@@ -32,6 +32,9 @@ jobs:
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install
+          
+      - name: Wait for DB
+        run: dockerize -wait tcp://localhost:5432 -timeout 1m
 
       - name: Setup test database
         env:
