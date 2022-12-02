@@ -36,11 +36,12 @@ jobs:
 
       - name: Setup test database
         env:
+          DATABASE_URL: postgres://postgres:@localhost:5432/test
           RAILS_ENV: test
-          PGHOST: localhost
-          PGUSER: squeakr_be
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         run: |
-          bin/rails db:{drop,create,migrate} --trace
+          bin/rails db:{create,migrate} --trace
 
       - name: Run tests
         run: bin/rspec
