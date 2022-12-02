@@ -6,4 +6,14 @@ RSpec.describe User, type: :model do
     it { should validate_uniqueness_of(:username).ignoring_case_sensitivity }
     it { should have_many :squeaks}
   end
+
+  describe 'instance methods' do
+    describe '#follow' do
+
+    end
+
+    describe '#unfollow' do
+
+    end
+  end
 end
