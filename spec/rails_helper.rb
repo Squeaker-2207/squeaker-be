@@ -72,8 +72,8 @@ VCR.configure do |config|
   config.ignore_localhost = true
   config.default_cassette_options = { re_record_interval: 365.days }
   config.configure_rspec_metadata!
-  config.filter_sensitive_data('<functionId>') { ENV['moderation_id'] }
-  config.filter_sensitive_data('<key>') { ENV['perspective_key'] }
+  config.filter_sensitive_data('<functionId>') { ENV['MODERATION_ID'] }
+  config.filter_sensitive_data('<key>') { ENV['PERSPECTIVE_KEY'] }
 end
 
 Shoulda::Matchers.configure do |config|
