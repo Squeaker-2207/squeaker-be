@@ -13,9 +13,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    env: 
-      MODERATION_ID: ${{ env.MODERATION_ID }}
-      PERSPECTIVE_KEY: ${{ env.PERSPECTIVE_KEY }}
     services:
       postgres:
         image: postgres:11-alpine
@@ -28,6 +25,8 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+      MODERATION_ID: ${{ env.MODERATION_ID }}
+      PERSPECTIVE_KEY: ${{ env.PERSPECTIVE_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
