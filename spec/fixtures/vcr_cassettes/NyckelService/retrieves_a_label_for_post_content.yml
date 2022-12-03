@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.nyckel.com/v1/functions/<functionId>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"nigg"}'
+      string: '{"data":"I hate immigrants"}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 02 Dec 2022 07:47:23 GMT
+      - Sat, 03 Dec 2022 20:40:19 GMT
       Cache-Control:
       - no-store
       Vary:
@@ -35,13 +35,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 3dc4c80cd959e984309833cac8f5a630.cloudfront.net (CloudFront)
+      - 1.1 88bce767af5e31f726ade38ea5253bd4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       X-Amz-Cf-Id:
-      - xxmjGEaVFyGOJK6UcX0CbUUKtMkqPGLmPbNaqe7vXq0eJfTAa8RWpg==
+      - oPmdYVYvxI9T7AkZtgFm4w_jOf51DxScQgosE8erlHRe2KLXR3AakQ==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Hate Speech","labelId":"label_7uer3vwnlxc0ib0p","confidence":0.8225205693759507}'
-  recorded_at: Fri, 02 Dec 2022 07:47:23 GMT
+      string: '{"labelName":"Safe","labelId":"label_qhgwk715xapwes32","confidence":0.5073011977066686}'
+  recorded_at: Sat, 03 Dec 2022 20:40:19 GMT
 recorded_with: VCR 6.1.0

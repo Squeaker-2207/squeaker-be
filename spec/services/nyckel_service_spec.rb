@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe NyckelService, :vcr do
   it 'retrieves a label for post content' do
-    comment = 'nigg'
+    comment = 'I hate immigrants'
     moderated = NyckelService.get_label(comment)
 
     expect(moderated.keys).to eq([:labelName, :labelId, :confidence])
