@@ -9,6 +9,7 @@ module Types
 
     # TODO: remove me
     field :fetch_users, resolver: Queries::FetchUsers
+    field :fetch_user, resolver: Queries::FetchUser
     # field :users, [UserType], null: false, description: "Returns all Users"
     # def users
     #   User.all.order(created_at: :desc)
