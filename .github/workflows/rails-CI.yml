@@ -13,6 +13,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env: 
+      MODERATION_ID: ${{ env.MODERATION_ID }}
+      PERSPECTIVE_KEY: ${{ env.PERSPECTIVE_KEY }}
     services:
       postgres:
         image: postgres:11-alpine
