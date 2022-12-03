@@ -72,7 +72,7 @@ VCR.configure do |config|
   config.ignore_localhost = true
   config.default_cassette_options = { re_record_interval: 365.days }
   config.configure_rspec_metadata!
-  # config.filter_sensitive_data('<API_KEY>', { ENV['API_KEY'] })
+  config.filter_sensitive_data('<functionId>') { ENV['moderation_id'] }
 end
 
 Shoulda::Matchers.configure do |config|
