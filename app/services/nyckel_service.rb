@@ -4,7 +4,7 @@ class NyckelService
   end
 
   def self.get_label(comment)
-    response = conn.post("/v1/functions/#{ENV['moderation_id']}/invoke") do |req|
+    response = conn.post("/v1/functions/#{ENV['MODERATION_ID']}/invoke") do |req|
       req.headers['Content-Type'] = 'application/json'
       req.body = { data: comment }.to_json
     end

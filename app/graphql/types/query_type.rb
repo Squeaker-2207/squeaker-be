@@ -9,6 +9,7 @@ module Types
 
     # TODO: remove me
     field :fetch_users, resolver: Queries::FetchUsers
+    field :all_squeaks, resolver: Queries::AllSqueaks
     # field :users, [UserType], null: false, description: "Returns all Users"
     # def users
     #   User.all.order(created_at: :desc)

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.nyckel.com/v1/functions/<functionId>/invoke
+    uri: https://www.nyckel.com/v1/functions/d41oe9tfzkiq44yv/invoke
     body:
       encoding: UTF-8
       string: '{"data":"nigg"}'
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 02 Dec 2022 07:47:23 GMT
+      - Sun, 04 Dec 2022 03:53:42 GMT
       Cache-Control:
       - no-store
       Vary:
@@ -35,13 +35,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 3dc4c80cd959e984309833cac8f5a630.cloudfront.net (CloudFront)
+      - 1.1 6a6653dfb47ccc5082f2a5b9d0d168ce.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - SEA19-C1
       X-Amz-Cf-Id:
-      - xxmjGEaVFyGOJK6UcX0CbUUKtMkqPGLmPbNaqe7vXq0eJfTAa8RWpg==
+      - UIRdsVJliJCRr1C4b2bfi6SEjmmOZsLZhgIZCiFy0b_RG9GD0M-FCQ==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Hate Speech","labelId":"label_7uer3vwnlxc0ib0p","confidence":0.8225205693759507}'
-  recorded_at: Fri, 02 Dec 2022 07:47:23 GMT
+      string: '{"labelName":"Hate Speech","labelId":"label_7uer3vwnlxc0ib0p","confidence":0.5170271179347364}'
+  recorded_at: Sun, 04 Dec 2022 03:53:42 GMT
 recorded_with: VCR 6.1.0
