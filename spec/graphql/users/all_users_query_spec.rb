@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users Query' do
+RSpec.describe 'All Users Query' do
   let(:users) { create_list(:user, 5) }
 
   it 'returns a list of users' do
