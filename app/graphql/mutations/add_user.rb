@@ -6,10 +6,8 @@ module Mutations
 
     def resolve(params:)
       user_params = Hash params
-
       begin 
         user = User.create!(user_params)
-
         { user: user }
       rescue ActiveRecord::RecordInvalid => e 
         GraphQL::ExecutionError.new("Invalid attributes for #{e.record.class}:"\
