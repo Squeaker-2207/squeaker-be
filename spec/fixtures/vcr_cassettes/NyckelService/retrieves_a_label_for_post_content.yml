@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<functionId>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"nigg"}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 02 Dec 2022 07:47:23 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 3dc4c80cd959e984309833cac8f5a630.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      X-Amz-Cf-Id:
+      - xxmjGEaVFyGOJK6UcX0CbUUKtMkqPGLmPbNaqe7vXq0eJfTAa8RWpg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Hate Speech","labelId":"label_7uer3vwnlxc0ib0p","confidence":0.8225205693759507}'
+  recorded_at: Fri, 02 Dec 2022 07:47:23 GMT
+recorded_with: VCR 6.1.0
