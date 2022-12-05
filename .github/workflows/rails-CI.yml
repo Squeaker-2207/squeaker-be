@@ -42,8 +42,6 @@ jobs:
       - name: Run tests
         run: 
           bin/rake
-          echo "$env:MODERATION_ID"
-          echo "$env:PERSPECTIVE_KEY"
 
   deploy:
     runs-on: ubuntu-latest
