@@ -2,7 +2,6 @@ class NyckelService
   def self.conn
     Faraday.new(url: 'https://www.nyckel.com')
   end
-
   def self.get_label(squeak)
     response = conn.post("/v1/functions/#{ENV['MODERATION_ID']}/invoke") do |req|
       req.headers['Content-Type'] = 'application/json'

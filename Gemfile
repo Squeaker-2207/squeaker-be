@@ -35,12 +35,12 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :test do 
   gem 'vcr'
   gem 'webmock'
-  gem 'faker'
   gem 'simplecov'
   gem 'shoulda-matchers' 
 end

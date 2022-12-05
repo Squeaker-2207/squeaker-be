@@ -10,3 +10,6 @@
   User.create(username: "User #{i + 1}", is_admin: false)
 end
 
+20.times do |i|
+  Squeak.create(content: "This is squeak ##{i}", user_id: Faker::Number.between(from: 1, to: 10))
+end

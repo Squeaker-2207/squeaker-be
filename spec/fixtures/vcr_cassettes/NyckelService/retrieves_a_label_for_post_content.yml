@@ -37,7 +37,7 @@ http_interactions:
       Via:
       - 1.1 422414d66021e4e123bcb2b5087f7042.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - SEA19-C1
       X-Amz-Cf-Id:
       - d_sgfmk4eBxgjQxQzbjFfYv89tXfO5r7-1DoMEDDPmrU5y7guElMlg==
     body:
