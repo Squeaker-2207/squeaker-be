@@ -3,10 +3,10 @@ class NyckelService
     Faraday.new(url: 'https://www.nyckel.com')
   end
 
-  def self.get_label(comment)
-    response = conn.post("/v1/functions/#{ENV['moderation_id']}/invoke") do |req|
+  def self.get_label(squeak)
+    response = conn.post("/v1/functions/#{ENV['MODERATION_ID']}/invoke") do |req|
       req.headers['Content-Type'] = 'application/json'
-      req.body = { data: comment }.to_json
+      req.body = { data: squeak }.to_json
     end
     JSON.parse(response.body, symbolize_names: true)
   end

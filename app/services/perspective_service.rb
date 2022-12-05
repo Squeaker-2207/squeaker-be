@@ -5,7 +5,7 @@ class PerspectiveService
 
   def self.post_probability(squeak)
     response = conn.post('/v1alpha1/comments:analyze?') do |req|
-      req.params = { key: ENV['perspective_key'] }
+      req.params = { key: ENV['PERSPECTIVE_KEY'] }
       req.headers['Content-Type'] = 'application/json'
       req.body = {
         comment: { text: squeak },

@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe PerspectiveService, :vcr do
   it 'retrieves metrics for post content' do
-    moderated_squeak = 'I hate women'
-    metrics = PerspectiveService.post_probability(moderated_squeak)
+    squeak = 'I hate women'
+    metrics = PerspectiveService.post_probability(squeak)
 
     expect(metrics).to be_a Hash
     expect(metrics.keys).to eq([:attributeScores, :languages, :detectedLanguages])
