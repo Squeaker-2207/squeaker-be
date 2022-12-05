@@ -25,6 +25,8 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+      MODERATION_ID: ${{ secrets.MODERATION_ID }}
+      PERSPECTIVE_KEY: ${{ secrets.PERSPECTIVE_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -38,15 +40,14 @@ jobs:
         run: bin/rails db:schema:load
       # Add or replace test runners here
       - name: Run tests
-        run: bin/rake
-        
+        run: 
+          bin/rake
+
   deploy:
     runs-on: ubuntu-latest
-    env: 
+    env:
       FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
-        
-    
