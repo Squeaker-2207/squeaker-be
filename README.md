@@ -27,6 +27,7 @@ Squeakr uses a service-oriented architecture with a React frontend.
   - [Fetch all users](#fetch-users)
   - [Fetch a single user by user id](#fetch-user)
   - [Add a new user](#add-user)
+  - [Fetch all squeaks](#all-squeaks)
 
 
 ---
@@ -239,7 +240,7 @@ Returns all squeaks in the database.
    | **reports** | Number of times a squeak has been reported | Integer |
    | **nuts** | Number of 'nuts' (likes) | Integer |
    | **approved** | Whether a squeak has been approved by a moderator | Boolean |
-   | **userId** | ID of the user who created the squeak | String |
+   | **userId** | ID of the user who created the squeak | Integer |
    | **createdAt** | ~ | DateTime        |
 
 *Note on `approved`: Default approved status is null. When a squeak is explicitly approved by an admin, it will be true. If an admin rejects a reported squeak for objectionable content, approved will be false*
@@ -270,7 +271,7 @@ query {
                 "id": "8",
                 "content": "Did you hear about the situation in politics?",
                 "reports": 0,
-                "nuts": 0,
+                "nuts": 75,
                 "approved": null,
                 "userId": 1,
                 "createdAt": "2022-12-05T23:12:13Z"
@@ -278,9 +279,9 @@ query {
             {
                 "id": "7",
                 "content": "The sports team was good in the last contest",
-                "reports": 0,
-                "nuts": 0,
-                "approved": null,
+                "reports": 1,
+                "nuts": 8,
+                "approved": true,
                 "userId": 3,
                 "createdAt": "2022-12-05T23:12:13Z"
             },
