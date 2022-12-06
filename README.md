@@ -1,10 +1,14 @@
 
-# <img src="app/assets/images/squeakr-logo.jpg" style="width: 150px;"> 
+<div align="center"><img src="app/assets/images/squeakr-logo.jpg" style="width: 150px;"> 
+
 ## Squeakr-Be - Turing Capstone Project 
 
 ![ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white) ![ror](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white) ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
 
 #### Contributors: [Gavin Carew](https://github.com/gjcarew) | [Jedeo Manirikumwenatwe](https://github.com/Jedeo) | [Noah van Ekdom](https://github.com/noahvanekdom) | [Colby Pearce](https://github.com/Crpearce) | [Anna Marie Sterling](https://github.com/AMSterling) | [Catalyst](https://github.com/Catalyst4Change) | [Ken Lenhart](https://github.com/Penitent0)
+</div>
+
+--- 
 
 ## Description
 
@@ -14,24 +18,33 @@ Squeakr uses a service-oriented architecture with a React frontend.
 
 [Check out the the front-end repo](https://github.com/Squeaker-2207/squeaker-fe)
 
-## <a name="contents"></a> Table of contents
+---
+# <a name="contents"></a> Table of contents
 - [Architecture](#architecture)
 - [Database setup](#database-setup)
   - [Required API keys](#required-keys)
 - [Endpoints](#endpoints)
-  - [Get recipes from a country](#get-recipes)
-  - [Get learning resources from a country](#get-resources)
-  - [Register a new user](#register)
+  - [Fetch all users](#fetch-users)
+  - [Fetch a single user by user id](#fetch-user)
+  - [Add a new user](#add-user)
   - [User login](#login)
   - [User logout](#logout)
   - [Add a new favorite recipe](#new-favorite)
   - [Get a user's favorites](#favorites)
   - [Delete a user's favorites](#delete-favorite)
 
-## <a name="architecture"></a>Architecture
+---
 
+# <a name="architecture"></a>Architecture
+[Back to top](#contents)
+# <img src="app/assets/images/schema-diagram.png"> 
 
-## <a name="database-setup"></a>Database Setup
+Squeakr was built with test-driven development, with Rspec used for testing. It is built with Rails conventions over configuration as a guiding principle. A service-facade design pattern is used when calling external API services. 
+
+The backend is designed with GraphQL best practices in mind for ultimate flexibility in access. Detailed information about GraphQL queries available can be found in the [Endpoints](#endpoints) section.
+
+---
+# <a name="database-setup"></a>Database Setup
 
 Live endpoints can be found by sending a `POST` request to `https://squeakr-be.fly.dev/graphql/`. 
 
@@ -48,7 +61,7 @@ Reset and seed the database:
 ```sh
 rake db:{drop,create,migrate,seed}
 ```
-### <a name="required-keys"></a> Required keys
+## <a name="required-keys"></a> Required keys
 
 Squeakr uses Google's Perspective API to assist with content moderation. It also uses a custom Nyckel ML API that you will need to set up separately. 
 
@@ -66,55 +79,155 @@ Start a rails server, and you're ready to query
 ```sh
 rails s
 ```
-
+---
 # <a name="endpoints"></a>Endpoints
 
-## <a name="get-recipes"></a> GET /api/v1/recipes
+All endpoints can be accessed with a `POST` request to the base url `https://squeakr-be.fly.dev/graphql/` in production. The header `Content-Type` with a value of `application/json` is required for all queries and mutations. The query (or mutation) should be sent in the body of the request. 
+
+## <a name="fetch-users"></a> fetchUsers
 [Back to top](#contents)
 
-Gets recipes from a single country.
+Returns all users.
 
-   | Parameter      | Description | Parameter type      | Data type |
-   | ----------- | ----------- | ----------- | ----------- |
-   | **country** | Optional - specify a country       | query   | String        |
+   | Fields      | Description       | Data type |
+   | ----------- | ----------- | ----------- |
+   | **id** | Primary key | String        |
+   | **username** | ~ | String        |
+   | **isAdmin** | Does the user have admin privileges? | Boolean      |
+   | **createdAt** | ~ | DateTime        |
+   | **updatedAt** | ~ | DateTime       |
 
-   *If no country parameter is included, recipes for a random country will be returned* 
+**Sample query**
+```graphql
+query {
+        fetchUsers {
+          id
+          username
+          isAdmin
+          createdAt
+          updatedAt
+        }
+      }
+```
+
 
 **Sample response (status 200)**
  ```json
+"data": {
+        "fetchUsers": [
+            {
+                "id": "6",
+                "username": "realgooduser",
+                "isAdmin": false,
+                "createdAt": "2022-12-06T00:26:51Z",
+                "updatedAt": "2022-12-06T00:26:51Z"
+            },
+            {
+                "id": "5",
+                "username": "User 5",
+                "isAdmin": false,
+                "createdAt": "2022-12-05T22:58:28Z",
+                "updatedAt": "2022-12-05T22:58:28Z"
+            },
+            ...
+        ]
+}
+ ```
+---
+## <a name="fetch-user"></a> fetchUser
+[Back to top](#contents)
+
+Returns a single user by their user ID.
+   
+   | Parameter | Description | Data type |
+   | --------- | ----------- | --------- |
+   | **id**    | Primary key | String   |
+
+   <br>
+
+   | Fields      | Description       | Data type |
+   | ----------- | ----------- | ----------- |
+   | **id** | Primary key | String        |
+   | **username** | ~ | String        |
+   | **isAdmin** | Does the user have admin privileges? | Boolean      |
+   | **createdAt** | ~ | DateTime        |
+   | **updatedAt** | ~ | DateTime       |
+
+<br>
+
+**Sample mutation**
+```graphql
+query {
+        fetchUser(id: "4") {
+          id
+          username
+          isAdmin
+        }
+      }
+```
+<br>
+
+**Sample response (status 200)**
+ ```json
+{
+    "data": {
+        "fetchUser": {
+            "id": "4",
+            "username": "User 4",
+            "isAdmin": false
+        }
+    }
+}
+ ```
+---
+## <a name="add-user"></a> addUser
+[Back to top](#contents)
+
+Add a user to the database.
+   
+   | Parameter | Description | Data type |
+   | --------- | ----------- | --------- |
+   | **username** | Username must be unique | String        |
+   | **isAdmin** | Does the user have admin privileges? | Boolean |
+
+<br>
+
+   | Fields      | Description       | Data type |
+   | ----------- | ----------- | ----------- |
+   | **id** | Primary key | String        |
+   | **username** | ~ | String        |
+   | **isAdmin** | Does the user have admin privileges? | Boolean |
+   | **createdAt** | ~ | DateTime        |
+   | **updatedAt** | ~ | DateTime       |
+
+<br>
+
+**Sample query**
+```graphql
+mutation {
+        addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
+          user {
+            id
+            username
+            isAdmin
+          }
+        }
+      }
+```
+
+
+**Sample response (status 201)**
+ ```json
  {
-    "data": [
-        {
-            "id": null,
-            "type": "recipe",
-            "attributes": {
-                "title": "Andy Ricker's Naam Cheuam Naam Taan Piip (Palm Sugar Simple Syrup)",
-                "url": "https://www.seriouseats.com/recipes/2013/11/andy-rickers-naam-cheuam-naam-taan-piip-palm-sugar-simple-syrup.html",
-                "country": "thailand",
-                "image": "https://edamam-product-images.s3.amazonaws.com/web-img/611/611..."
-            }
-        },
-        {
-            "id": null,
-            "type": "recipe",
-            "attributes": {
-                "title": "THAI COCONUT CREMES",
-                "url": "https://food52.com/recipes/37220-thai-coconut-cremes",
-                "country": "thailand",
-                "image": "https://edamam-product-images.s3.amazonaws.com/web-img/8cd/8c..."
-            }
-        },
-        {
-            "id": null,
-            "type": "recipe",
-            "attributes": {
-                "title": "Sriracha",
-                "url": "http://www.jamieoliver.com/recipes/vegetables-recipes/sriracha/",
-                "country": "thailand",
-                "image": "https://edamam-product-images.s3.amazonaws.com/web-img/cb5..."
+    "data": {
+        "addUser": {
+            "user": {
+                "id": "7",
+                "username": "Test_User",
+                "isAdmin": false
             }
         }
-    ]
- }
+    }
+}
  ```
 ---
