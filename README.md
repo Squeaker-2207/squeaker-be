@@ -227,3 +227,65 @@ mutation {
 }
  ```
 ---
+## <a name="all-squeaks"></a> allSqueaks
+[Back to top](#contents)
+
+Returns all squeaks in the database.
+
+   | Fields      | Description       | Data type |
+   | ----------- | ----------- | ----------- |
+   | **id** | Primary key | String        |
+   | **content** | The text of the squeak | String        |
+   | **reports** | Number of times a squeak has been reported | Integer |
+   | **nuts** | Number of 'nuts' (likes) | Integer |
+   | **approved** | Whether a squeak has been approved by a moderator | Boolean |
+   | **userId** | ID of the user who created the squeak | String |
+   | **createdAt** | ~ | DateTime        |
+
+*Note on `approved`: Default approved status is null. When a squeak is explicitly approved by an admin, it will be true. If an admin rejects a reported squeak for objectionable content, approved will be false*
+<br>
+
+**Sample query**
+```graphql
+query {
+  allSqueaks {
+    id
+    content
+    reports
+    nuts
+    approved
+    userId
+    createdAt
+  }
+}
+```
+
+
+**Sample response (status 200)**
+ ```json
+{
+    "data": {
+        "allSqueaks": [
+            {
+                "id": "8",
+                "content": "Did you hear about the situation in politics?",
+                "reports": 0,
+                "nuts": 0,
+                "approved": null,
+                "userId": 1,
+                "createdAt": "2022-12-05T23:12:13Z"
+            },
+            {
+                "id": "7",
+                "content": "The sports team was good in the last contest",
+                "reports": 0,
+                "nuts": 0,
+                "approved": null,
+                "userId": 3,
+                "createdAt": "2022-12-05T23:12:13Z"
+            },
+            ...
+        ]
+    }
+}
+ ```
