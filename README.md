@@ -27,11 +27,7 @@ Squeakr uses a service-oriented architecture with a React frontend.
   - [Fetch all users](#fetch-users)
   - [Fetch a single user by user id](#fetch-user)
   - [Add a new user](#add-user)
-  - [User login](#login)
-  - [User logout](#logout)
-  - [Add a new favorite recipe](#new-favorite)
-  - [Get a user's favorites](#favorites)
-  - [Delete a user's favorites](#delete-favorite)
+
 
 ---
 
