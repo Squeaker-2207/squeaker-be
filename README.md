@@ -8,29 +8,113 @@
 
 ## Description
 
-A rails backend API using graphql... more to come
+A rails backend API for Squeakr, a short-form messaging service built around healthy conversations and robust moderation.
 
-### 
+Squeakr uses a service-oriented architecture with a React frontend. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Check out the the front-end repo](https://github.com/Squeaker-2207/squeaker-fe)
 
-Things you may want to cover:
+## <a name="contents"></a> Table of contents
+- [Architecture](#architecture)
+- [Database setup](#database-setup)
+  - [Required API keys](#required-keys)
+- [Endpoints](#endpoints)
+  - [Get recipes from a country](#get-recipes)
+  - [Get learning resources from a country](#get-resources)
+  - [Register a new user](#register)
+  - [User login](#login)
+  - [User logout](#logout)
+  - [Add a new favorite recipe](#new-favorite)
+  - [Get a user's favorites](#favorites)
+  - [Delete a user's favorites](#delete-favorite)
 
-* Ruby version
+## <a name="architecture"></a>Architecture
 
-* System dependencies
 
-* Configuration
+## <a name="database-setup"></a>Database Setup
 
-* Database creation
+Live endpoints can be found by sending a `POST` request to `https://squeakr-be.fly.dev/graphql/`. 
 
-* Database initialization
+Instructions to set up a local version of the Squeakr backend: 
 
-* How to run the test suite
+Fork and clone the project, then install the required gems with `bundle`. A full list of gems that will be installed can be found in the [gemfile](gemfile). 
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+bundle install
+```
 
-* Deployment instructions
+Reset and seed the database: 
 
-* ...
+```sh
+rake db:{drop,create,migrate,seed}
+```
+### <a name="required-keys"></a> Required keys
+
+Squeakr uses Google's Perspective API to assist with content moderation. It also uses a custom Nyckel ML API that you will need to set up separately. 
+
+Once you have your keys, set up your environment with 
+```sh
+bundle exec figaro install
+```
+ Then add your keys to `config/application.yml`:
+```ruby
+MODERATION_ID: <YOUR_NYCKEL_KEY>
+
+PERSPECTIVE_KEY: <YOUR_PERSPECTIVE_KEY>
+```
+Start a rails server, and you're ready to query 
+```sh
+rails s
+```
+
+# <a name="endpoints"></a>Endpoints
+
+## <a name="get-recipes"></a> GET /api/v1/recipes
+[Back to top](#contents)
+
+Gets recipes from a single country.
+
+   | Parameter      | Description | Parameter type      | Data type |
+   | ----------- | ----------- | ----------- | ----------- |
+   | **country** | Optional - specify a country       | query   | String        |
+
+   *If no country parameter is included, recipes for a random country will be returned* 
+
+**Sample response (status 200)**
+ ```json
+ {
+    "data": [
+        {
+            "id": null,
+            "type": "recipe",
+            "attributes": {
+                "title": "Andy Ricker's Naam Cheuam Naam Taan Piip (Palm Sugar Simple Syrup)",
+                "url": "https://www.seriouseats.com/recipes/2013/11/andy-rickers-naam-cheuam-naam-taan-piip-palm-sugar-simple-syrup.html",
+                "country": "thailand",
+                "image": "https://edamam-product-images.s3.amazonaws.com/web-img/611/611..."
+            }
+        },
+        {
+            "id": null,
+            "type": "recipe",
+            "attributes": {
+                "title": "THAI COCONUT CREMES",
+                "url": "https://food52.com/recipes/37220-thai-coconut-cremes",
+                "country": "thailand",
+                "image": "https://edamam-product-images.s3.amazonaws.com/web-img/8cd/8c..."
+            }
+        },
+        {
+            "id": null,
+            "type": "recipe",
+            "attributes": {
+                "title": "Sriracha",
+                "url": "http://www.jamieoliver.com/recipes/vegetables-recipes/sriracha/",
+                "country": "thailand",
+                "image": "https://edamam-product-images.s3.amazonaws.com/web-img/cb5..."
+            }
+        }
+    ]
+ }
+ ```
+---
