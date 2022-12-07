@@ -2,10 +2,10 @@
 
 module Types
   class UserType < Types::BaseObject
-    field :id, ID, null: false
-    field :username, String
-    field :is_admin, Boolean
-    field :created_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+    implements Types::RecordType
+    description 'A user'
+    
+    field :username, String, null: false, description: 'The username of the user'
+    field :is_admin, Boolean, description: 'Whether the user is an admin'
   end
 end

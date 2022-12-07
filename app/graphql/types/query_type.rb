@@ -4,8 +4,15 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    field :fetch_users, resolver: Queries::FetchUsers
-    field :fetch_user, resolver: Queries::FetchUser
-    field :all_squeaks, resolver: Queries::AllSqueaks
+    field :squeaks, SqueakType.connection_type, description: "The list of squeaks"
+    field :users, UserType.connection_type, description: "The list of users"
+
+    def squeaks
+      Squeak.order(:created_at)
+    end
+
+    def users
+      User.order(:created_at)
+    end
   end
 end
