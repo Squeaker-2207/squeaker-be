@@ -4,7 +4,7 @@ module Queries
     type [Types::SqueakType], null: false
 
     def resolve
-      reports = Squeak.reported
+      Squeak.reported
     end
   end
 end
