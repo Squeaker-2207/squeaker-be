@@ -26,8 +26,8 @@ RSpec.describe 'Reported Squeaks Query' do
 
     result = SqueakrBeSchema.execute(query, context: { reported_squeaks: squeaks }).as_json
 
-    expect(result['data']).to be_a(Hash)
-    expect(result['data']['reportedSqueaks']).to be_an(Array)
+    expect(result['data']).to be_a Hash
+    expect(result['data']['reportedSqueaks']).to be_an Array
 
     result['data']['reportedSqueaks'].each do |squeak|
       expect(squeak['id']).to be_a String
