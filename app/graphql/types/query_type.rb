@@ -7,5 +7,6 @@ module Types
     field :fetch_users, resolver: Queries::FetchUsers
     field :fetch_user, resolver: Queries::FetchUser
     field :all_squeaks, resolver: Queries::AllSqueaks
+    field :reported_squeaks, resolver: Queries::ReportedSqueaks
   end
 end
