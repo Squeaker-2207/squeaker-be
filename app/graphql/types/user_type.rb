@@ -4,8 +4,11 @@ module Types
   class UserType < Types::BaseObject
     implements Types::RecordType
     description 'A user'
-    
+
     field :username, String, null: false, description: 'The username of the user'
     field :is_admin, Boolean, description: 'Whether the user is an admin'
+    field :avatar, String, description: 'The url of the user avatar'
+
+    has_many :squeaks
   end
 end
