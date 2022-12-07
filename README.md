@@ -27,6 +27,8 @@ Squeakr uses a service-oriented architecture with a React frontend.
   - [Fetch all users](#fetch-users)
   - [Fetch a single user by user id](#fetch-user)
   - [Add a new user](#add-user)
+  - [Fetch all squeaks](#all-squeaks)
+  - [Delete a squeak](#delete-squeak)
 
 
 ---
@@ -227,3 +229,125 @@ mutation {
 }
  ```
 ---
+## <a name="all-squeaks"></a> allSqueaks
+[Back to top](#contents)
+
+Returns all squeaks in the database.
+
+   | Fields      | Description       | Data type |
+   | ----------- | ----------- | ----------- |
+   | **id** | Primary key | String        |
+   | **content** | The text of the squeak | String        |
+   | **reports** | Number of times a squeak has been reported | Integer |
+   | **nuts** | Number of 'nuts' (likes) | Integer |
+   | **approved** | Whether a squeak has been approved by a moderator | Boolean |
+   | **user** | The user who created the squeak | User |
+   | **createdAt** | ~ | DateTime        |
+
+*Note on `approved`: Default approved status is null. When a squeak is explicitly approved by an admin, it will be true. If an admin rejects a reported squeak for objectionable content, approved will be false*
+<br>
+
+**Sample query**
+```graphql
+query {
+  allSqueaks {
+    id
+    content
+    reports
+    nuts
+    approved
+    user {
+      id
+      username
+    }
+    createdAt
+  }
+}
+```
+
+
+**Sample response (status 200)**
+ ```json
+{
+    "data": {
+        "allSqueaks": [
+            {
+                "id": "8",
+                "content": "Did you hear about the situation in politics?",
+                "reports": 0,
+                "nuts": 75,
+                "approved": null,
+                "user": {
+                  "username": "User 1"
+                },
+                "createdAt": "2022-12-05T23:12:13Z"
+            },
+            {
+                "id": "7",
+                "content": "The sports team was good in the last contest",
+                "reports": 1,
+                "nuts": 8,
+                "approved": true,
+                "user": {
+                  "username": "User 1"
+                },
+                "createdAt": "2022-12-05T23:12:13Z"
+            },
+            ...
+        ]
+    }
+}
+ ```
+ ---
+## <a name="delete-squeak"></a> deleteSqueak
+[Back to top](#contents)
+
+Delete a squeak by ID.
+
+   | Parameter | Description | Data type |
+   | --------- | ----------- | --------- |
+   | **id** | Squeak primary key (required) | String        |
+
+
+  <br>
+
+
+   | Fields      | Description       | Data type |
+   | ----------- | ----------- | ----------- |
+   | **id** | Primary key | String        |
+   | **content** | The text of the squeak | String        |
+   | **reports** | Number of times a squeak has been reported | Integer |
+   | **nuts** | Number of 'nuts' (likes) | Integer |
+   | **approved** | Whether a squeak has been approved by a moderator | Boolean |
+   | **user** | ID of the user who created the squeak | Integer |
+   | **createdAt** | ~ | DateTime        |
+
+
+<br>
+
+**Sample mutation**
+```graphql
+mutation {
+	deleteSqueak(input: {id: 7 }) {
+    squeak {
+      id
+      content
+    }
+  }
+}
+```
+
+
+**Sample response (status 200)**
+ ```json
+{
+  "data": {
+    "deleteSqueak": {
+      "squeak": {
+        "id": "3",
+        "content": "I sure hope this squeak stays up forever"
+      }
+    }
+  }
+}
+ ```

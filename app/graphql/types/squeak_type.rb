@@ -7,7 +7,7 @@ module Types
     field :reports, Integer
     field :nuts, Integer
     field :approved, Boolean
-    field :user_id, Integer
+    field :user, Types::UserType
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
   end
 end

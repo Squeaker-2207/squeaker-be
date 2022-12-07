@@ -13,7 +13,9 @@ RSpec.describe 'Squeaks Query' do
           reports
           nuts
           approved
-          userId
+          user {
+            username
+          }
           createdAt
         }
       }
@@ -30,7 +32,7 @@ RSpec.describe 'Squeaks Query' do
       expect(squeak["reports"]).to be_a(Integer)
       expect(squeak["nuts"]).to be_an(Integer)
       expect(squeak["approved"]).to be_in([true, false])
-      expect(squeak["userId"]).to be_a(Integer)
+      expect(squeak["user"]).to be_a(Hash)
       expect(squeak["createdAt"]).to be_a(String)
     end
   end
