@@ -279,7 +279,7 @@ query {
                 "approved": null,
                 "user": {
                   "username": "User 1"
-                }
+                },
                 "createdAt": "2022-12-05T23:12:13Z"
             },
             {
@@ -290,7 +290,7 @@ query {
                 "approved": true,
                 "user": {
                   "username": "User 1"
-                }
+                },
                 "createdAt": "2022-12-05T23:12:13Z"
             },
             ...
