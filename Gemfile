@@ -19,6 +19,9 @@ gem 'puma', '~> 3.11'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
+#Cross Origin Resource Sharing
+gem 'rack-cors'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
