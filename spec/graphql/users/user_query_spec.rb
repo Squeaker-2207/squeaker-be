@@ -41,4 +41,22 @@ RSpec.describe 'Get One User by ID Query' do
     expect(result.dig("errors")).to be_a(Array)
     expect(result.dig("errors", 0, "message")).to eq("User with id 999 not found.")
   end
+
+  it 'returns errors if invalid attributes are passed' do
+    query = <<~GQL
+      query {
+        fetchUser(id: "#{user.id}") {
+          id
+          username
+          unicorn
+        }
+      }
+    GQL
+
+    result = SqueakrBeSchema.execute(query)
+
+    expect(result.dig("errors")).to be_a(Array)
+    expect(result.dig("errors", 0, "message")).to be_a(String)
+    expect(result.dig("errors", 0, "message")).to eq("Field 'unicorn' doesn't exist on type 'User'")
+  end
 end

@@ -7,9 +7,6 @@ module Queries
       User.find(id)
     rescue ActiveRecord::RecordNotFound => e 
       GraphQL::ExecutionError.new("User with id #{id} not found.")
-    rescue ActiveRecord::RecordInvalid => e 
-      GraphQL::ExecutionError.new("Invalid Attributes for #{e.record.class}:"\
-      " #{e.record.class.errors.full_messages.join(', ')}")
     end
   end
 end
