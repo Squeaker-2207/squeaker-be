@@ -28,7 +28,7 @@ Squeakr uses a service-oriented architecture with a React frontend.
   - [Fetch a single user by user id](#fetch-user)
   - [Add a new user](#add-user)
   - [Fetch all squeaks](#all-squeaks)
-  - [Fetch repoted squeaks](#reported-squeaks)
+  - [Fetch reported squeaks](#reported-squeaks)
   - [Delete a squeak](#delete-squeak)
   - [Add a squeak](#add-squeak)
 
