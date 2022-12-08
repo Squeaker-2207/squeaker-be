@@ -60,4 +60,23 @@ RSpec.describe 'Add User Mutation' do
     expect(result.dig("errors", 0, "message")).to eq("Argument 'username' on InputObject 'UserInput' has an invalid value (100). Expected type 'String!'.")
     expect(result.dig("errors", 1, "message")).to eq("Argument 'isAdmin' on InputObject 'UserInput' has an invalid value (Incorrect). Expected type 'Boolean!'.")
   end
+
+  it 'returns errors if incorrect params are passed' do
+    query = <<~GQL
+      mutation {
+        addUser(input: { params: { unicorns: "are not real", isAdmin: false } }) {
+          user {
+            id
+            username
+            isAdmin
+          }
+        }
+      }
+    GQL
+
+    result = SqueakrBeSchema.execute(query)
+
+    expect(result.dig("errors", 0, "message")).to eq("Argument 'username' on InputObject 'UserInput' is required. Expected type String!")
+    expect(result.dig("errors", 1, "message")).to eq("InputObject 'UserInput' doesn't accept argument 'unicorns'")
+  end
 end
