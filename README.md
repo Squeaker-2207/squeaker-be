@@ -444,7 +444,7 @@ Add a squeak.
 **Sample mutation**
 ```graphql
 mutation {
-	addSqueak(input: {params: { content: "Birds are not real.", user_id: "1"} }) {
+	addSqueak(input: {params: { content: "Birds are not real.", userId: "1"} }) {
     squeak {
       id
       content
