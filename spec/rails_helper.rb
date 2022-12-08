@@ -74,6 +74,7 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.filter_sensitive_data('<MODERATION_ID>') { ENV['MODERATION_ID'] }
   config.filter_sensitive_data('<PERSPECTIVE_KEY>') { ENV['PERSPECTIVE_KEY'] }
+  config.allow_http_connections_when_no_cassette = true
 end
 
 Shoulda::Matchers.configure do |config|

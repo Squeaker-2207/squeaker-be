@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe NyckelService, :vcr do
+  let(:squeak1) { create(:squeak) }
+
   it 'retrieves a label for post content' do
-    squeak = 'I hate immigrants'
-    moderated = NyckelService.get_label(squeak)
-    require 'pry';binding.pry
+    moderated = NyckelService.get_label(squeak1.content)
 
     expect(moderated.keys).to eq([:labelName, :labelId, :confidence])
     expect(moderated[:labelName]).to be_a String

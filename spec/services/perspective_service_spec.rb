@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe PerspectiveService, vcr: { record: :new_episodes } do
+RSpec.describe PerspectiveService, :vcr do
+  let(:squeak1) { create(:squeak) }
+
   it 'retrieves metrics for post content' do
-    squeak = 'I hate women'
-    metrics = PerspectiveService.post_probability(squeak)
+    metrics = PerspectiveService.post_probability(squeak1.content)
 
     expect(metrics).to be_a Hash
     expect(metrics.keys).to eq([:attributeScores, :languages, :detectedLanguages])
