@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"Consequatur ut ex quis."}'
+      string: '{"data":"Est eos molestiae non."}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 07 Dec 2022 01:39:36 GMT
+      - Thu, 08 Dec 2022 01:43:32 GMT
       Cache-Control:
       - no-store
       Vary:
@@ -35,13 +35,57 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 f111faa3f37b2169cefb225b0f246234.cloudfront.net (CloudFront)
+      - 1.1 1949caaabae48a894fcd770a3e1384f6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - SEA19-C1
       X-Amz-Cf-Id:
-      - TxFPjjO1j0t1pv4vL7DY7hbDaIDctOG_gfiWZRPZ8QUrXcQl-ecJcg==
+      - cvwq7P0MvV-yazCQ4MEWbvYs2ZZAyVBYuX_T_O0nGVPDgewfoMqRyw==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_qhgwk715xapwes32","confidence":0.7779952009417043}'
-  recorded_at: Wed, 07 Dec 2022 01:39:36 GMT
+      string: '{"labelName":"Safe","labelId":"label_qhgwk715xapwes32","confidence":0.7104849060960448}'
+  recorded_at: Thu, 08 Dec 2022 01:43:32 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Est eos molestiae non."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 08 Dec 2022 01:43:32 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 0bb842bd5868b86440983b936bb0adee.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - CE3jf3aJxukWGwooFFJL7U8LCv2uhXS7sG6e-uaSDdryQZ94FpJ6dw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_qhgwk715xapwes32","confidence":0.7104849060960448}'
+  recorded_at: Thu, 08 Dec 2022 01:43:32 GMT
 recorded_with: VCR 6.1.0

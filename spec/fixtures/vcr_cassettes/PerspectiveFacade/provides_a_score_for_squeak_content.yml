@@ -2,10 +2,54 @@
 http_interactions:
 - request:
     method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Qui quia et aut."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 08 Dec 2022 01:43:09 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 adc2002956acc4d61bfbf3b973fdf246.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - l2ogspud8VTUwOIORERKO1nZBbK3HS_FA5PA7ChAMcFyR7qleo5fvg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_qhgwk715xapwes32","confidence":0.8393231777085238}'
+  recorded_at: Thu, 08 Dec 2022 01:43:09 GMT
+- request:
+    method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Nesciunt ut omnis aliquid."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Qui quia et aut."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -27,7 +71,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Wed, 07 Dec 2022 19:45:44 GMT
+      - Thu, 08 Dec 2022 01:43:09 GMT
       Server:
       - ESF
       Cache-Control:
@@ -52,15 +96,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 26,
+                  "end": 16,
                   "score": {
-                    "value": 0.0022661188,
+                    "value": 0.00031679415,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0022661188,
+                "value": 0.00031679415,
                 "type": "PROBABILITY"
               }
             }
@@ -72,5 +116,5 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Wed, 07 Dec 2022 19:45:44 GMT
+  recorded_at: Thu, 08 Dec 2022 01:43:09 GMT
 recorded_with: VCR 6.1.0
