@@ -5,10 +5,11 @@ module Mutations
     field :user, Types::UserType, null: false
 
     def resolve(params:)
-      require 'pry'; binding.pry
       user_params = Hash params
       begin 
         user = User.new(user_params)
+      rescue ActiveRecord::RecordInvalid => e
+        raise GraphQL::ExecutionError, e.message
       end
       user.save
       { user: user }
