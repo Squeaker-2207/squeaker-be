@@ -351,3 +351,67 @@ mutation {
   }
 }
  ```
+ ---
+ 
+ ## <a name="add-squeak"></a> addSqueak
+[Back to top](#contents)
+
+Add a squeak.
+
+   | Parameter | Description | Data type |
+   | --------- | ----------- | --------- |
+   | **content** | Squeak message content (required) | String        |
+   | **user_id** | Squeak message contant (required) | ID       |
+   
+
+  <br>
+
+
+   | Fields      | Description       | Data type |
+   | ----------- | ----------- | ----------- |
+   | **id** | Primary key | String        |
+   | **content** | The text of the squeak | String        |
+   | **reports** | Number of times a squeak has been reported | Integer |
+   | **nuts** | Number of 'nuts' (likes) | Integer |
+   | **approved** | Whether a squeak has been approved by a moderator | Boolean |
+   | **user** | ID of the user who created the squeak | Integer |
+   | **createdAt** | ~ | DateTime        |
+
+<br>
+
+**Sample mutation**
+```graphql
+mutation {
+	addSqueak(input: {params: { content: "Birds are not real.", user_id: "1"} }) {
+    squeak {
+      id
+      content
+      user {
+      	id
+	username
+	isAdmin
+ 	}
+      }
+    }
+  }
+```
+
+
+**Sample response (status 200)**
+ ```json
+{
+  "data": {
+    "addSqueak": {
+      "squeak": {
+        "id": "10",
+        "content":  "Birds are not real."
+	    "user": {
+		    "id": "1",
+		    "username": "A real good user",
+		    "isAdmin": false
+			}
+	     }  
+	}  
+   } 
+}
+ ```
