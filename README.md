@@ -299,6 +299,68 @@ query {
 }
  ```
  ---
+ ## <a name="reported-squeaks"></a> reportedSqueaks
+[Back to top](#contents)
+
+Returns reported squeaks in the database.
+
+   | Fields      | Description       | Data type |
+   | ----------- | ----------- | ----------- |
+   | **id** | Primary key | String        |
+   | **content** | The text of the squeak | String        |
+   | **reports** | Number of times a squeak has been reported | Integer |
+   | **nuts** | Number of 'nuts' (likes) | Integer |
+   | **approved** | Whether a squeak has been approved by a moderator | Boolean |
+   | **score** | Probability of squeak containing identity attack | Score |
+   | **user** | The user who created the squeak | User |
+   | **createdAt** | ~ | DateTime        |
+
+
+**Sample query**
+```graphql
+query {
+  reportedSqueaks {
+    id
+    content
+    reports
+    nuts
+    approved
+    score
+    user {
+      id
+      username
+    }
+    createdAt
+  }
+}
+```
+
+
+**Sample response (status 200)**
+ ```json
+{
+    "data": {
+    "reportedSqueaks": [
+      {
+        "id": "61",
+        "content": "Random squeak",
+        "reports": 1,
+        "nuts": 0,
+        "approved": null,
+        "score": {
+          "metric": "IDENTITY_ATTACK",
+          "probability": 0.0052906936
+        },
+        "user": {
+          "username": "User 2"
+        },
+        "createdAt": "2022-12-07T21:59:24Z"
+      }
+    ]
+  }
+}
+ ```
+ ---
 ## <a name="delete-squeak"></a> deleteSqueak
 [Back to top](#contents)
 
