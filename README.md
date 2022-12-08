@@ -69,7 +69,7 @@ bundle exec figaro install
 ```
  Then add your keys to `config/application.yml`:
 ```ruby
-MODERATION_ID: <YOUR_NYCKEL_KEY>
+MODERATION_ID: <YOUR_NYCKEL_FUNCTION_ID>
 
 PERSPECTIVE_KEY: <YOUR_PERSPECTIVE_KEY>
 ```
