@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Hic soluta vel voluptate."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:45:35 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 e7e267d22aaab825174c9e30c630f528.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - LH_cXqKw_EAOePtlmbSHHyGCwtlEMNu1pGcruGfVZrU526gM2syEBA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:45:35 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Hic soluta vel voluptate."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:45:35 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 d3cd567650e598ded7d5dd9266aa396c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - fU4VxOisgn71LY-6knUmJlxo0saoHqwpzuacGtNlwk5a5Ec8ScLtQA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:45:35 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,453 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Aliquam assumenda cupiditate minima."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:37:45 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 adb1632aa800f446f3f4e7b45c9dfd3e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - RXmQ1961qVJzoEIVayu4uiPuqT1iHrTc8Sh4u-pamQqa2Y9ygHEoag==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:37:45 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Maiores necessitatibus qui numquam."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:37:46 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 4b0dd366e44414a4e7e6ed6970080d58.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - Xt-9uCLc29ofXGahbg0sDo7hRsJ3lmIg5IwLRPhbayb175E5n1IIqQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:37:46 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Omnis dignissimos laudantium pariatur."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:37:46 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 adb1632aa800f446f3f4e7b45c9dfd3e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - u6c9I3rAdXyamX7RVUVjVAEDkp0BKQ_gXPRz_ZhXC7XVZ57g2ECUWQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:37:46 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Ut distinctio beatae odit."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:37:46 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 2c0478fce3b7f4f5348678901d1bf60a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - anlYagvleXS6U1rlOYslc-QDNsL1nbWpXpdRAQ6ndsoTONvkPoISfA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:37:46 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Soluta rem et culpa."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:37:47 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 68d323cfd4a0f1ae252f92c083654190.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - 2xSkSt2yvxyVi0XZ13NKW4Qb71hb_jTBOCLGTguq7T0ekA9tHKPuhw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:37:47 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Commodi quis placeat provident."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:37:47 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 5035c434ac92f0eed9f2b400824fa6e8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - r_tzTJ992-JYb0gH0pv2TtGANwyefu8sk1qwlVGMu9fPnnF7-TrCMg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:37:47 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Aliquid fugiat amet voluptate."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:37:47 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 0459f0f7053eeb224fd9fe0f5db5970a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - 9RixbVzXl2R2cQPkA9ctXZmULaRpRoXsql_pwr10Zf5lvG8q7sNlHw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:37:47 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Natus quaerat unde voluptas."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:37:48 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 5035c434ac92f0eed9f2b400824fa6e8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - 9H6siKcZuDb9FgUrLWBwQ9SlbpFk0FThFewhbzE1qWco9eSQxc0TUQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:37:48 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Ducimus qui et occaecati."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:37:48 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 2b0c54ffe9876882253b010d44184bdc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - W4yRbKRgAKB6L59Yq9Yo2rE66Ps5TD8C5EGq2l8uSC1aBNKJeof5cA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:37:48 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Id nesciunt nihil et."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 09 Dec 2022 22:37:48 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 782e548cb0b1b64c63d995fc59568b48.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-P2
+      X-Amz-Cf-Id:
+      - PQkhE6Y9J3bSnmIAitGNm6zDDCFWYsJhN-nhu2Ywat3xOu_vfs4czw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Fri, 09 Dec 2022 22:37:48 GMT
+recorded_with: VCR 6.1.0

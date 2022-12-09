@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Update Squeak Mutation' do
+RSpec.describe 'Update Squeak Mutation', :vcr do
   before(:each) do
     @user = create(:user)
     @squeak = create(:squeak, id: 1, user: @user, reports: 0, nuts: 1)
