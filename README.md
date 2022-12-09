@@ -1,20 +1,20 @@
 
-<div align="center"><img src="app/assets/images/squeakr-logo.jpg" style="width: 150px;"> 
+<div align="center"><img src="app/assets/images/squeakr-logo.jpg" style="width: 150px;">
 
-## Squeakr-Be - Turing Capstone Project 
+## Squeakr-Be - Turing Capstone Project
 
-![ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white) ![ror](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white) ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+[![ruby][ruby]][ruby-url] [![ror][ror]][ror-url] [![Postgres][Postgres]][Postgres-url] [![GitHub Actions][GitHub Actions]][GitHub Actions-url] [![GraphQL][GraphQL]][GraphQL-url]
 
 #### Contributors: [Gavin Carew](https://github.com/gjcarew) | [Jedeo Manirikumwenatwe](https://github.com/Jedeo) | [Noah van Ekdom](https://github.com/noahvanekdom) | [Colby Pearce](https://github.com/Crpearce) | [Anna Marie Sterling](https://github.com/AMSterling) | [Catalyst](https://github.com/Catalyst4Change) | [Ken Lenhart](https://github.com/Penitent0)
 </div>
 
---- 
+---
 
 ## Description
 
 A rails backend API for Squeakr, a short-form messaging service built around healthy conversations and robust moderation.
 
-Squeakr uses a service-oriented architecture with a React frontend. 
+Squeakr uses a service-oriented architecture with a React frontend.
 
 [Check out the the front-end repo](https://github.com/Squeaker-2207/squeaker-fe)
 
@@ -28,42 +28,44 @@ Squeakr uses a service-oriented architecture with a React frontend.
   - [Fetch a single user by user id](#fetch-user)
   - [Add a new user](#add-user)
   - [Fetch all squeaks](#all-squeaks)
+  - [Fetch reported squeaks](#reported-squeaks)
   - [Delete a squeak](#delete-squeak)
-  - [Update a squeak](#update-squeak)
+  - [Add a squeak](#add-squeak)
+
 
 ---
 
 # <a name="architecture"></a>Architecture
 [Back to top](#contents)
-# <img src="app/assets/images/schema-diagram.png"> 
+# <img src="app/assets/images/schema-diagram.png">
 
-Squeakr was built with test-driven development, with Rspec used for testing. It is built with Rails conventions over configuration as a guiding principle. A service-facade design pattern is used when calling external API services. 
+Squeakr was built with test-driven development, with Rspec used for testing. It is built with Rails conventions over configuration as a guiding principle. A service-facade design pattern is used when calling external API services.
 
 The backend is designed with GraphQL best practices in mind for ultimate flexibility in access. Detailed information about GraphQL queries available can be found in the [Endpoints](#endpoints) section.
 
 ---
 # <a name="database-setup"></a>Database Setup
 
-Live endpoints can be found by sending a `POST` request to `https://squeakr-be.fly.dev/graphql/`. 
+Live endpoints can be found by sending a `POST` request to `https://squeakr-be.fly.dev/graphql/`.
 
-Instructions to set up a local version of the Squeakr backend: 
+Instructions to set up a local version of the Squeakr backend:
 
-Fork and clone the project, then install the required gems with `bundle`. A full list of gems that will be installed can be found in the [gemfile](gemfile). 
+Fork and clone the project, then install the required gems with `bundle`. A full list of gems that will be installed can be found in the [gemfile](gemfile).
 
 ```sh
 bundle install
 ```
 
-Reset and seed the database: 
+Reset and seed the database:
 
 ```sh
 rake db:{drop,create,migrate,seed}
 ```
 ## <a name="required-keys"></a> Required keys
 
-Squeakr uses Google's Perspective API to assist with content moderation. It also uses a custom Nyckel ML API that you will need to set up separately. 
+Squeakr uses Google's <a href="https://developers.perspectiveapi.com/s/docs-get-started?language=en_US" target="_blank" rel="noopener noreferrer">Perspective API</a> to assist with content moderation. It also uses a custom <a href="https://www.nyckel.com/" target="_blank" rel="noopener noreferrer">Nyckel ML API</a> that you will need to set up separately.
 
-Once you have your keys, set up your environment with 
+Once you have your keys, set up your environment with
 ```sh
 bundle exec figaro install
 ```
@@ -73,14 +75,14 @@ MODERATION_ID: <YOUR_NYCKEL_FUNCTION_ID>
 
 PERSPECTIVE_KEY: <YOUR_PERSPECTIVE_KEY>
 ```
-Start a rails server, and you're ready to query 
+Start a rails server, and you're ready to query
 ```sh
 rails s
 ```
 ---
 # <a name="endpoints"></a>Endpoints
 
-All endpoints can be accessed with a `POST` request to the base url `https://squeakr-be.fly.dev/graphql/` in production. The header `Content-Type` with a value of `application/json` is required for all queries and mutations. The query (or mutation) should be sent in the body of the request. 
+All endpoints can be accessed with a `POST` request to the base url `https://squeakr-be.fly.dev/graphql/` in production. The header `Content-Type` with a value of `application/json` is required for all queries and mutations. The query (or mutation) should be sent in the body of the request.
 
 ## <a name="fetch-users"></a> fetchUsers
 [Back to top](#contents)
@@ -136,7 +138,7 @@ query {
 [Back to top](#contents)
 
 Returns a single user by their user ID.
-   
+
    | Parameter | Description | Data type |
    | --------- | ----------- | --------- |
    | **id**    | Primary key | String   |
@@ -182,7 +184,7 @@ query {
 [Back to top](#contents)
 
 Add a user to the database.
-   
+
    | Parameter | Description | Data type |
    | --------- | ----------- | --------- |
    | **username** | Username must be unique | String        |
@@ -340,24 +342,25 @@ query {
  ```json
 {
     "data": {
-    "reportedSqueaks": [
-      {
-        "id": "61",
-        "content": "Random squeak",
-        "reports": 1,
-        "nuts": 0,
-        "approved": null,
-        "score": {
-          "metric": "IDENTITY_ATTACK",
-          "probability": 0.0052906936
-        },
-        "user": {
-          "username": "User 2"
-        },
-        "createdAt": "2022-12-07T21:59:24Z"
-      }
-    ]
-  }
+        "reportedSqueaks": [
+      	    {
+       		"id": "61",
+        	"content": "Random squeak",
+        	"reports": 1,
+        	"nuts": 0,
+        	"approved": null,
+        	"score": {
+          	    "metric": "IDENTITY_ATTACK",
+         	    "probability": 0.0052906936
+            	 },
+        	 "user": {
+          	    "username": "User 2"
+            	 },
+        	 "createdAt": "2022-12-07T21:59:24Z"
+     	     },
+	     ...
+    	]
+    }
 }
  ```
  ---
@@ -415,10 +418,6 @@ mutation {
  ```
  ---
 
- ## <a name="update-squeak"></a> updateSqueak
- [Back to top](#contents)
-
- 
  ## <a name="add-squeak"></a> addSqueak
 [Back to top](#contents)
 
@@ -428,7 +427,7 @@ Add a squeak.
    | --------- | ----------- | --------- |
    | **content** | Squeak message content (required) | String        |
    | **user_id** | Squeak message contant (required) | ID       |
-   
+
 
   <br>
 
@@ -448,7 +447,7 @@ Add a squeak.
 **Sample mutation**
 ```graphql
 mutation {
-	addSqueak(input: {params: { content: "Birds are not real.", user_id: "1"} }) {
+	addSqueak(input: {params: { content: "Birds are not real.", userId: "1"} }) {
     squeak {
       id
       content
@@ -478,6 +477,22 @@ mutation {
 			}
 	     }  
 	}  
-   } 
+   }
 }
  ```
+<!-- BADGE LINKS -->
+
+[ruby]: https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[ruby-url]: https://www.ruby-lang.org/en/
+
+[ror]: https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white
+[ror-url]: https://rubyonrails.org/
+
+[Postgres]: https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
+[Postgres-url]: https://www.postgresql.org/
+
+[GitHub Actions]: https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white
+[GitHub Actions-url]: https://github.com/features/actions
+
+[GraphQL]: https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white
+[GraphQL-url]: https://graphql.org/
