@@ -41,11 +41,11 @@ group :development, :test do
   gem 'factory_bot_rails'
 end
 
-group :test do 
+group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'simplecov'
-  gem 'shoulda-matchers' 
+  gem 'shoulda-matchers'
 end
 
 group :development do
