@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Add Squeaks' do
+RSpec.describe 'Add Squeaks', :vcr do
   let(:user) { create(:user) }
   let(:content) { "Birds are a fiction created by Big Bird Seed" }
 

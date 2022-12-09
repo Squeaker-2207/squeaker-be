@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"Repellat qui in ad."}'
+      string: '{"data":"Ratione eos ipsum cumque."}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -17,8 +17,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 402
+      message: Payment Required
     headers:
       Content-Type:
       - application/json; charset=utf-8
@@ -27,29 +27,30 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 08 Dec 2022 01:43:33 GMT
+      - Thu, 08 Dec 2022 23:57:48 GMT
       Cache-Control:
       - no-store
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Error from cloudfront
       Via:
-      - 1.1 49cdeca097624936e070b73619df7da8.cloudfront.net (CloudFront)
+      - 1.1 d09fd0ac0a8733df98f134da74eec098.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SEA19-C1
+      - DEN52-P2
       X-Amz-Cf-Id:
-      - TQD5mq4WAGWtconlf5A4RIeFLAlBTyz5gjJZjBeWajcXOI13MxOcQQ==
+      - DMBwLsiT2okAIMgoEzTSn0hPXeOJk022m1spO9wl4HPnBIPtf3JuUg==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_qhgwk715xapwes32","confidence":0.6901443459227078}'
-  recorded_at: Thu, 08 Dec 2022 01:43:32 GMT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Thu, 08 Dec 2022 23:57:48 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Repellat qui in ad."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Ratione eos ipsum cumque."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -71,7 +72,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Thu, 08 Dec 2022 01:43:33 GMT
+      - Thu, 08 Dec 2022 23:57:48 GMT
       Server:
       - ESF
       Cache-Control:
@@ -96,15 +97,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 19,
+                  "end": 25,
                   "score": {
-                    "value": 0.00054109364,
+                    "value": 0.0030523231,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.00054109364,
+                "value": 0.0030523231,
                 "type": "PROBABILITY"
               }
             }
@@ -116,5 +117,5 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Thu, 08 Dec 2022 01:43:32 GMT
+  recorded_at: Thu, 08 Dec 2022 23:57:48 GMT
 recorded_with: VCR 6.1.0
