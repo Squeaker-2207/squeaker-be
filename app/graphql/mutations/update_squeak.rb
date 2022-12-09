@@ -17,8 +17,8 @@ module Mutations
         squeak.save
       end
       { squeak: squeak }
-      # rescue ActiveRecord::RecordNotFound => e
-      #   GraphQL::ExecutionError.new(e)
+      rescue ActiveRecord::RecordNotFound => e
+        GraphQL::ExecutionError.new(e)
     end
   end
 end

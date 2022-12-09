@@ -23,7 +23,7 @@ RSpec.describe 'Update Squeak Mutation' do
       }
       GQL
     end
-    it 'update a squeak by adding a report' do
+    it 'can add a report to a squeak' do
       expect(@squeak.reports).to eq(0)
       result = SqueakrBeSchema.execute(@query)
       expect(result.dig("data")).to be_a(Hash)
@@ -36,12 +36,19 @@ RSpec.describe 'Update Squeak Mutation' do
     end
 
     it 'after a squeak is reported, it is assigned a perspective score set' do
-
-
+      result = SqueakrBeSchema.execute(@query)
+      expect(result.dig("data")).to be_a(Hash)
+      squeak_return = result.dig("data", "updateSqueak", "squeak")
+      expect(squeak_return.dig("score")).to be_an Hash
+      expect(squeak_return.dig("score", "metric")).to be_a String
+      expect(squeak_return.dig("score", "probability")).to be_a Float
     end
 
     it "reporting a squeak does not change any other squeak values" do
-
+      result = SqueakrBeSchema.execute(@query)
+      expect(result.dig("data")).to be_a(Hash)
+      squeak_return = result.dig("data", "updateSqueak", "squeak")
+      expect(squeak_return.dig("content")).to eq(@squeak.content)
     end
 
     xit "a user cannot report a squeak more than once " do
@@ -71,7 +78,6 @@ RSpec.describe 'Update Squeak Mutation' do
       expect(result.dig("data")).to be_a(Hash)
       expect(result.dig("data", "updateSqueak", "squeak")).to be_a(Hash)
       squeak_return = result.dig("data", "updateSqueak", "squeak")
-      require 'pry'; binding.pry
     end
 
     it 'does not modify the other values of a squeak when nutting' do
