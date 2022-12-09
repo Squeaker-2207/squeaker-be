@@ -45,6 +45,7 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'simplecov'
+  gem 'database_cleaner-active_record'
   gem 'shoulda-matchers' 
 end
 
