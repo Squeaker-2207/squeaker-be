@@ -63,7 +63,7 @@ rake db:{drop,create,migrate,seed}
 ```
 ## <a name="required-keys"></a> Required keys
 
-Squeakr uses Google's <a href="https://developers.perspectiveapi.com/s/docs-get-started?language=en_US">Perspective API</a> to assist with content moderation. It also uses a custom <a href="https://www.nyckel.com/">Nyckel ML API</a> that you will need to set up separately.
+Squeakr uses Google's <a href="https://developers.perspectiveapi.com/s/docs-get-started?language=en_US" target="_blank" rel="noopener noreferrer">Perspective API</a> to assist with content moderation. It also uses a custom <a href="https://www.nyckel.com/" target="_blank" rel="noopener noreferrer">Nyckel ML API</a> that you will need to set up separately.
 
 Once you have your keys, set up your environment with
 ```sh
