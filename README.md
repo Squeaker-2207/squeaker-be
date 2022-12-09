@@ -342,24 +342,24 @@ query {
  ```json
 {
     "data": {
-    "reportedSqueaks": [
-      {
-        "id": "61",
-        "content": "Random squeak",
-        "reports": 1,
-        "nuts": 0,
-        "approved": null,
-        "score": {
-          "metric": "IDENTITY_ATTACK",
-          "probability": 0.0052906936
-        },
-        "user": {
-          "username": "User 2"
-        },
-        "createdAt": "2022-12-07T21:59:24Z"
-      }
-    ]
-  }
+    	"reportedSqueaks": [
+      	    {
+        	"id": "61",
+        	"content": "Random squeak",
+        	"reports": 1,
+        	"nuts": 0,
+        	"approved": null,
+        	"score": {
+          	    "metric": "IDENTITY_ATTACK",
+         	    "probability": 0.0052906936
+            	},
+        	"user": {
+          	    "username": "User 2"
+            	},
+        	"createdAt": "2022-12-07T21:59:24Z"
+     	     }
+    	]
+    }
 }
  ```
  ---
