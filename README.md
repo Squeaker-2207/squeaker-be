@@ -29,7 +29,7 @@ Squeakr uses a service-oriented architecture with a React frontend.
   - [Add a new user](#add-user)
   - [Fetch all squeaks](#all-squeaks)
   - [Delete a squeak](#delete-squeak)
-
+  - [Update a squeak](#update-squeak)
 
 ---
 
@@ -414,6 +414,10 @@ mutation {
 }
  ```
  ---
+
+ ## <a name="update-squeak"></a> updateSqueak
+ [Back to top](#contents)
+
  
  ## <a name="add-squeak"></a> addSqueak
 [Back to top](#contents)
