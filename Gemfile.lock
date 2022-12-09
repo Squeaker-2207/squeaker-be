@@ -53,6 +53,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
+    date (3.3.1)
     diff-lcs (1.5.0)
     docile (1.4.0)
     erubi (1.11.0)
@@ -94,20 +95,19 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
     minitest (5.16.3)
     msgpack (1.6.0)
-    net-imap (0.3.1)
+    net-imap (0.3.2)
+      date
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.0)
+    net-protocol (0.2.1)
       timeout
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.9)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.13.10-x86_64-darwin)
       racc (~> 1.4)
     pg (1.4.5)
     pry (0.14.1)
@@ -199,7 +199,7 @@ GEM
     websocket-extensions (0.1.5)
 
 PLATFORMS
-  ruby
+  x86_64-darwin-21
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
@@ -226,4 +226,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.1.4
+   2.3.21
