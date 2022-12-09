@@ -79,4 +79,15 @@ RSpec.describe 'Add User Mutation' do
     expect(result.dig("errors", 0, "message")).to eq("Argument 'username' on InputObject 'UserInput' is required. Expected type String!")
     expect(result.dig("errors", 1, "message")).to eq("InputObject 'UserInput' doesn't accept argument 'unicorns'")
   end
+
+  # it 'test' do
+  #   user_params = { params: { username: "SirPostAlot", isAdmin: false } }
+
+  #   post "/graphql", params: { query: user_params }
+
+  #   json_response = JSON.parse(response.body, symbolize_names: true)
+  #   require 'pry'; binding.pry
+
+
+  # end
 end

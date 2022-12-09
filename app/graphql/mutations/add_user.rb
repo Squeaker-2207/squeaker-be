@@ -6,11 +6,7 @@ module Mutations
 
     def resolve(params:)
       user_params = Hash params
-      begin 
-        user = User.new(user_params)
-      rescue ActiveRecord::RecordInvalid => e
-        raise GraphQL::ExecutionError, e.message
-      end
+      user = User.new(user_params)
       user.save
       { user: user }
     end
