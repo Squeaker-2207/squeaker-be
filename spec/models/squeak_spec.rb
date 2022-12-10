@@ -26,7 +26,7 @@ RSpec.describe Squeak, type: :model do
     let(:squeak2) { squeaks.second }
     let(:squeak3) { squeaks.third }
 
-    describe '#reported' do
+    describe '::reported' do
       it 'scopes reported squeaks' do
         Squeak.reported.each do |squeak|
 
@@ -35,7 +35,7 @@ RSpec.describe Squeak, type: :model do
       end
     end
 
-    describe '.score', :vcr do
+    describe '#score', :vcr do
       it 'provides probability score' do
 
         expect(squeak1.score.metric).to eq('IDENTITY_ATTACK')
