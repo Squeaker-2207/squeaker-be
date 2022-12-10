@@ -9,6 +9,7 @@ class Squeak < ApplicationRecord
   #     self.errors.add(:content, label[:labelName])
   #   end
   # end
+
   scope :reported, -> { where('reports > 0') }
 
   def score

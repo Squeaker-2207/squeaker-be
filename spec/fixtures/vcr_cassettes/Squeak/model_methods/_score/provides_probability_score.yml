@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"Dolores maiores ipsa vel."}'
+      string: '{"data":"Vitae qui qui ad."}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -17,8 +17,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 402
+      message: Payment Required
     headers:
       Content-Type:
       - application/json; charset=utf-8
@@ -27,29 +27,30 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 08 Dec 2022 01:44:39 GMT
+      - Thu, 08 Dec 2022 23:57:46 GMT
       Cache-Control:
       - no-store
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Error from cloudfront
       Via:
-      - 1.1 0cf6c59c77f0fff670ae085179adc458.cloudfront.net (CloudFront)
+      - 1.1 5d351175d5947d478733fbecdab866f6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SEA19-C1
+      - DEN52-P2
       X-Amz-Cf-Id:
-      - OTMgXtYe9cN23v4M4Q3b8XTsSDr9GW40mIr6MKV81iQQDNrM5GJwig==
+      - HLm_K0g6ltCDy0yEtzqQbqdGE4crxaKIpx1mwYupd4m8fuU7sIQZ1w==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_qhgwk715xapwes32","confidence":0.8573506820848436}'
-  recorded_at: Thu, 08 Dec 2022 01:44:39 GMT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Thu, 08 Dec 2022 23:57:46 GMT
 - request:
     method: post
     uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"Maxime esse voluptatem reiciendis."}'
+      string: '{"data":"Culpa dolorem aliquid et."}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -61,8 +62,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 402
+      message: Payment Required
     headers:
       Content-Type:
       - application/json; charset=utf-8
@@ -71,29 +72,30 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 08 Dec 2022 01:44:39 GMT
+      - Thu, 08 Dec 2022 23:57:47 GMT
       Cache-Control:
       - no-store
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Error from cloudfront
       Via:
-      - 1.1 49cdeca097624936e070b73619df7da8.cloudfront.net (CloudFront)
+      - 1.1 1c80fe425edf82026702c486fb324fd0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SEA19-C1
+      - DEN52-P2
       X-Amz-Cf-Id:
-      - 0aEl1-MYH03Zh7x4-GJ4szUIB_qjCVON3DkRDKwtiM_2P8tD2-Fvmw==
+      - Wo7xZklYGc0PA7dM5HcePBZpyBiC2kZnb1qyGeQSetVn1RFM_zDrGQ==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_qhgwk715xapwes32","confidence":0.7818739164866729}'
-  recorded_at: Thu, 08 Dec 2022 01:44:39 GMT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Thu, 08 Dec 2022 23:57:47 GMT
 - request:
     method: post
     uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"Voluptatem dolorem sint asperiores."}'
+      string: '{"data":"Nulla aut quas ut."}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -105,8 +107,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 402
+      message: Payment Required
     headers:
       Content-Type:
       - application/json; charset=utf-8
@@ -115,29 +117,30 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 08 Dec 2022 01:44:40 GMT
+      - Thu, 08 Dec 2022 23:57:47 GMT
       Cache-Control:
       - no-store
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Error from cloudfront
       Via:
-      - 1.1 d0387b833e3ca8cb748a1296b4b4bf2a.cloudfront.net (CloudFront)
+      - 1.1 9eceed849af3c369b60088e6ae5ad92c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SEA19-C1
+      - DEN52-P2
       X-Amz-Cf-Id:
-      - TKi4ZfW7pYeHPeBF-S9dJzK0zrkWfkldc9wOS02CUJiBzqBYJ2nang==
+      - 2EFH93sdngBFi41T3zz_h_bCv6t25V3i5FYx9mB9jJZkRmGCXtlPOg==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_qhgwk715xapwes32","confidence":0.7948483666217989}'
-  recorded_at: Thu, 08 Dec 2022 01:44:39 GMT
+      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
+        plan"}'
+  recorded_at: Thu, 08 Dec 2022 23:57:47 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Dolores maiores ipsa vel."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Vitae qui qui ad."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -159,7 +162,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Thu, 08 Dec 2022 01:44:40 GMT
+      - Thu, 08 Dec 2022 23:57:47 GMT
       Server:
       - ESF
       Cache-Control:
@@ -184,15 +187,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 25,
+                  "end": 17,
                   "score": {
-                    "value": 0.0032373124,
+                    "value": 0.0005804039,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0032373124,
+                "value": 0.0005804039,
                 "type": "PROBABILITY"
               }
             }
@@ -204,13 +207,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Thu, 08 Dec 2022 01:44:40 GMT
+  recorded_at: Thu, 08 Dec 2022 23:57:47 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Dolores maiores ipsa vel."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Vitae qui qui ad."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -232,7 +235,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Thu, 08 Dec 2022 01:44:40 GMT
+      - Thu, 08 Dec 2022 23:57:47 GMT
       Server:
       - ESF
       Cache-Control:
@@ -257,15 +260,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 25,
+                  "end": 17,
                   "score": {
-                    "value": 0.0032373124,
+                    "value": 0.0005804039,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0032373124,
+                "value": 0.0005804039,
                 "type": "PROBABILITY"
               }
             }
@@ -277,5 +280,5 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Thu, 08 Dec 2022 01:44:40 GMT
+  recorded_at: Thu, 08 Dec 2022 23:57:47 GMT
 recorded_with: VCR 6.1.0
