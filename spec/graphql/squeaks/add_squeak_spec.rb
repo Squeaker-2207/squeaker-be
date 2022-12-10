@@ -7,7 +7,7 @@ RSpec.describe 'Add Squeaks', :vcr do
   it 'Can add squeaks to user' do
     query = <<~GQL
       mutation {
-        addSqueak(input: { params: { content: "#{content}", userId: #{user.id} } }) {
+        addSqueak(input: { params: { content: "#{content}", userId: "#{user.id}" } }) {
           squeak {
             id
             content
@@ -37,7 +37,7 @@ RSpec.describe 'Add Squeaks', :vcr do
   it 'returns errors if user id is not found' do
     query = <<~GQL
       mutation {
-        addSqueak(input: { params: { content: "#{content}", userId: 999 } }) {
+        addSqueak(input: { params: { content: "#{content}", userId: "999" } }) {
           squeak {
             id
             content
