@@ -1,5 +1,5 @@
 module Mutations
-  class AddUser < Mutations::BaseMutation 
+  class AddUser < Mutations::BaseMutation
     argument :params, Types::Input::UserInputType, required: true
 
     field :user, Types::UserType, null: false
@@ -7,8 +7,11 @@ module Mutations
     def resolve(params:)
       user_params = Hash params
       user = User.new(user_params)
-      user.save
-      { user: user }
+      if user.save
+        { user: user }
+      else
+        raise GraphQL::ExecutionError, user.errors.full_messages.join(', ')
+      end
     end
   end
 end
