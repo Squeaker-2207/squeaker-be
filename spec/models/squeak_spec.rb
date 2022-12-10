@@ -5,14 +5,13 @@ RSpec.describe Squeak, type: :model do
     it { should belong_to :user }
     it { should validate_presence_of :content }
 
-    it 'validates that the content passes the Nyckel ML filter' do 
+    xit 'validates that the content passes the Nyckel ML filter' do 
       new_squeak = build(:squeak)
       nyckel_response = {
         :labelName=>"Hate Speech", 
         :labelId=>"label_qhgwk715xapwes32", 
         :confidence=>0.85
       }
-
       allow(NyckelService).to receive(:get_label).and_return(nyckel_response)
 
       expect(new_squeak.save).to be false
@@ -27,7 +26,7 @@ RSpec.describe Squeak, type: :model do
     let(:squeak3) { squeaks.third }
 
     describe '#reported' do
-      it 'scopes reported squeaks' do
+      xit 'scopes reported squeaks' do
         Squeak.reported.each do |squeak|
 
           expect(squeak.reports).to be > 0
@@ -36,7 +35,7 @@ RSpec.describe Squeak, type: :model do
     end
 
     describe '.score', :vcr do
-      it 'provides probability score' do
+      xit 'provides probability score' do
 
         expect(squeak1.score.metric).to eq('IDENTITY_ATTACK')
         expect(squeak1.score.probability).to be_a Float
