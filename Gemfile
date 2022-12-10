@@ -46,7 +46,6 @@ group :test do
   gem 'webmock'
   gem 'simplecov'
   gem 'shoulda-matchers'
-  gem 'capybara'
 end
 
 group :development do
