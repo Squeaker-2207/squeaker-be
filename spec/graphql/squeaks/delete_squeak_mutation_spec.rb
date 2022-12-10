@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Delete Squeak Mutation' do
+RSpec.describe 'Delete Squeak Mutation', :vcr do
   it 'delete a squeak' do
     user = create(:user)
     squeak = create(:squeak, id: 1, user: user)
@@ -22,7 +22,7 @@ RSpec.describe 'Delete Squeak Mutation' do
     expect(result.dig("data", "deleteSqueak", "squeak", 'id')).to be_a(String)
   end
 
-  it 'returns an error if the squeak does not exist' do 
+  it 'returns an error if the squeak does not exist' do
     query = <<~GQL
     mutation {
       deleteSqueak(input: {id: 7 }) {
