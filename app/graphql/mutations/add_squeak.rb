@@ -12,8 +12,12 @@ module Mutations
       rescue ActiveRecord::RecordNotFound => e
         raise GraphQL::ExecutionError, e.message
       end
-      squeak.save 
-      { squeak: squeak }
+      if
+        squeak.save
+        { squeak: squeak }
+      else
+        raise GraphQL::ExecutionError, squeak.errors.full_messages.join(', ')
+      end 
     end
   end
 end
