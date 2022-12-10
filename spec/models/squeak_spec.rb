@@ -5,11 +5,11 @@ RSpec.describe Squeak, type: :model do
     it { should belong_to :user }
     it { should validate_presence_of :content }
 
-    it 'validates that the content passes the Nyckel ML filter' do 
+    it 'validates that the content passes the Nyckel ML filter' do
       new_squeak = build(:squeak)
       nyckel_response = {
-        :labelName=>"Hate Speech", 
-        :labelId=>"label_qhgwk715xapwes32", 
+        :labelName=>"Hate Speech",
+        :labelId=>"label_qhgwk715xapwes32",
         :confidence=>0.85
       }
 
@@ -20,13 +20,13 @@ RSpec.describe Squeak, type: :model do
     end
   end
 
-  describe 'model methods', :vcr do
+  describe 'model methods' do
     let(:squeaks) { create_list(:squeak, 3) }
     let(:squeak1) { squeaks.first }
     let(:squeak2) { squeaks.second }
     let(:squeak3) { squeaks.third }
 
-    describe '#reported' do
+    describe '::reported' do
       it 'scopes reported squeaks' do
         Squeak.reported.each do |squeak|
 
@@ -35,7 +35,7 @@ RSpec.describe Squeak, type: :model do
       end
     end
 
-    describe '.score', :vcr do
+    describe '#score', :vcr do
       it 'provides probability score' do
 
         expect(squeak1.score.metric).to eq('IDENTITY_ATTACK')
