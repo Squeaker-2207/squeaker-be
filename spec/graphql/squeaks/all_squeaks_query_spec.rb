@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Squeaks Query' do
+RSpec.describe 'Squeaks Query', :vcr do
   let(:user) { create(:user) }
   let(:squeaks) { create_list(:squeak, 10, user_id: user.id) }
 

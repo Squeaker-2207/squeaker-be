@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe 'User squeaks' do
+RSpec.describe 'User squeaks', :vcr do
   before :each do
     @user = create(:user)
     @user_no_squeaks = create(:user)
-    @squeaks = create_list(:squeak, 10, user: @user)
+    @squeaks = create_list(:squeak, 5, user: @user)
   end
 
   it 'Returns squeaks associated with a user' do
