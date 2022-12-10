@@ -1,16 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'User squeaks', :vcr do
-  before :each do
-    @user = create(:user)
-    @user_no_squeaks = create(:user)
-    @squeaks = create_list(:squeak, 5, user: @user)
-  end
+  let(:user) { create(:user) }
+  let(:user_no_squeaks) { create(:user) }
+  let(:squeaks) { create_list(:squeak, 10, user_id: user.id) }
 
   it 'Returns squeaks associated with a user' do
     query = <<~GQL
       query {
-        fetchUser(id: "#{@user.id}") {
+        fetchUser(id: "#{user.id}") {
           id
           username
           isAdmin
@@ -25,7 +23,7 @@ RSpec.describe 'User squeaks', :vcr do
       }
     GQL
 
-    result = SqueakrBeSchema.execute(query, context: { fetch_user: @user })
+    result = SqueakrBeSchema.execute(query, context: { fetch_user: user })
 
     expect(result.dig("data")).to be_a(Hash)
     expect(result.dig("data", "fetchUser")).to be_a(Hash)
@@ -43,7 +41,7 @@ RSpec.describe 'User squeaks', :vcr do
   it 'returns empty array if user has no squeaks' do
     query = <<~GQL
       query {
-        fetchUser(id: "#{@user_no_squeaks.id}") {
+        fetchUser(id: "#{user_no_squeaks.id}") {
           id
           username
           isAdmin
@@ -58,7 +56,7 @@ RSpec.describe 'User squeaks', :vcr do
       }
     GQL
 
-    result = SqueakrBeSchema.execute(query, context: { fetch_user: @user })
+    result = SqueakrBeSchema.execute(query, context: { fetch_user: user })
 
     expect(result.dig("data", "fetchUser", "userSqueaks")).to be_a(Array)
     expect(result.dig("data", "fetchUser", "userSqueaks")).to eq([])

@@ -5,6 +5,7 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
     @user = create(:user)
     @squeak = create(:squeak, id: 1, user: @user, reports: 0, nuts: 1)
   end
+
   describe "reporting a squeak" do
     before(:each) do
       @query = <<~GQL
@@ -24,6 +25,7 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
       }
       GQL
     end
+    
     it 'can add a report to a squeak' do
       expect(@squeak.reports).to eq(0)
       result = SqueakrBeSchema.execute(@query)
