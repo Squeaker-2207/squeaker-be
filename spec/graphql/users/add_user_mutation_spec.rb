@@ -80,14 +80,23 @@ RSpec.describe 'Add User Mutation' do
     expect(result.dig("errors", 1, "message")).to eq("InputObject 'UserInput' doesn't accept argument 'unicorns'")
   end
 
-  # it 'test' do
-  #   user_params = { params: { username: "SirPostAlot", isAdmin: false } }
+  it 'raises errors if invalid user params' do
+    query = <<~GQL
+      mutation {
+        user: addUser(
+        input: { params: { username: "", isAdmin: false } }) {
+          user {
+            username
+            isAdmin
+          }
+        }
+      }
+    GQL
 
-  #   post "/graphql", params: { query: user_params }
+    result = SqueakrBeSchema.execute(query)
 
-  #   json_response = JSON.parse(response.body, symbolize_names: true)
-  #   require 'pry'; binding.pry
-
-
-  # end
+    expect(result.dig('data')).to eq({'user'=>nil})
+    expect(result.dig('data', 0)).to be_nil
+    expect(result.dig('errors', 0, 'message')).to eq("Username can't be blank")
+  end
 end
