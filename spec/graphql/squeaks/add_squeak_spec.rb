@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Add Squeaks', :vcr do
   let(:user) { create(:user) }
   let(:content) { "Birds are a fiction created by Big Bird Seed" }
+  let(:content1) { 'I really love mountain bluebirds' }
 
   it 'Can add squeaks to user' do
     query = <<~GQL
@@ -75,5 +76,29 @@ RSpec.describe 'Add Squeaks', :vcr do
 
     expect(result.dig("errors", 0, "message")).to eq("Argument 'content' on InputObject 'SqueakInput' is required. Expected type String!")
     expect(result.dig("errors", 1, "message")).to eq("InputObject 'SqueakInput' doesn't accept argument 'unicorns'")
+  end
+
+  it 'returns an error if it cannot add the squeak' do
+    query = <<~GQL
+      mutation {
+        addSqueak(input: { params: { content: "#{content1}", userId: "#{user.id}" } }) {
+          squeak {
+            id
+            content
+            user {
+              id
+              username
+            }
+          }
+        }
+      }
+    GQL
+
+    result = SqueakrBeSchema.execute(query)
+
+    expect(result.dig('data')).to be_a Hash
+    expect(result.dig('data')).to eq({'addSqueak'=>nil})
+    expect(result.dig('data', 0)).to be_nil
+    expect(result.dig('errors', 0, 'message')).to eq('Content Hate Speech')
   end
 end
