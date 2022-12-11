@@ -142,7 +142,6 @@ RSpec.describe 'Add User Mutation' do
       expect(result.id).to eq(user.id)
       expect(result.username).to eq(user.username)
       expect(result.is_admin).to eq(user.is_admin)
-
     end
 
     it '::resolve_type' do
