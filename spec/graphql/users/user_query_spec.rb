@@ -75,4 +75,20 @@ RSpec.describe 'Get One User by ID Query' do
     expect(result.username).to eq(user.username)
     expect(result.is_admin).to eq(user.is_admin)
   end
+
+  it '::id_from_object' do
+    query = <<~GQL
+      query {
+        fetchUser(id: "#{user.id}") {
+          id
+          username
+          isAdmin
+        }
+      }
+    GQL
+
+    result = SqueakrBeSchema.id_from_object(user, :fetchUser, query)
+
+    expect(result).to be_a String
+  end
 end

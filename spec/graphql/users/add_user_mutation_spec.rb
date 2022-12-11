@@ -110,24 +110,6 @@ RSpec.describe 'Add User Mutation' do
       expect(result).to be_nil
     end
 
-    it '::id_from_object' do
-      query = <<~GQL
-        mutation {
-          addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
-            user {
-              id
-              username
-              isAdmin
-            }
-          }
-        }
-      GQL
-
-      result = SqueakrBeSchema.id_from_object(user, :addUser, query)
-
-      expect(result).to be_a String
-    end
-
     it '::resolve_type' do
       resolution = mutation.resolve(params: {
           username: 'new_username'
