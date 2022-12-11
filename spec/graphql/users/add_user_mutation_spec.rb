@@ -129,15 +129,20 @@ RSpec.describe 'Add User Mutation' do
     end
 
     it '::object_from_id' do
+      user_gid = User.find_by_id(user.id).to_global_id
       query = <<~GQL
         query {
-          id: 1
+          id: user.id
         }
       GQL
 
-      result = SqueakrBeSchema.object_from_id(user.id, query)
+      result = SqueakrBeSchema.object_from_id(user_gid, query)
 
-      expect(result).to be_nil
+      expect(result).to be_a User
+      expect(result.id).to eq(user.id)
+      expect(result.username).to eq(user.username)
+      expect(result.is_admin).to eq(user.is_admin)
+
     end
 
     it '::resolve_type' do
