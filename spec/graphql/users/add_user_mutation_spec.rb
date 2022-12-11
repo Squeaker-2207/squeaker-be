@@ -99,4 +99,79 @@ RSpec.describe 'Add User Mutation' do
     expect(result.dig('data', 0)).to be_nil
     expect(result.dig('errors', 0, 'message')).to eq("Username can't be blank")
   end
+
+  describe 'increase test coverage' do
+    let(:mutation) { Mutations::AddUser.new(object: nil, field: nil, context: {}) }
+    let(:user) { create(:user, id: 1) }
+
+    it '::type_error' do
+      query = <<~GQL
+        mutation {
+          addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
+            user {
+              id
+              username
+              isAdmin
+            }
+          }
+        }
+      GQL
+
+      result = SqueakrBeSchema.type_error(mutation.field, mutation.context)
+      expect(result).to be_nil
+    end
+
+    it '::id_from_object' do
+      query = <<~GQL
+        mutation {
+          addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
+            user {
+              id
+              username
+              isAdmin
+            }
+          }
+        }
+      GQL
+
+      result = SqueakrBeSchema.id_from_object(user, :addUser, query)
+
+      expect(result).to be_a String
+    end
+
+    it '::object_from_id' do
+      query = <<~GQL
+        mutation {
+          addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
+            user {
+              id
+              username
+              isAdmin
+            }
+          }
+        }
+      GQL
+
+      result = SqueakrBeSchema.object_from_id(user.id, query)
+
+      expect(result).to be_nil
+    end
+
+    # it '::resolve_type' do
+    #   query = <<~GQL
+    #     mutation {
+    #       addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
+    #         user {
+    #           id
+    #           username
+    #           isAdmin
+    #         }
+    #       }
+    #     }
+    #   GQL
+    #
+    #   result = SqueakrBeSchema.resolve_type()
+    #   require "pry"; binding.pry
+    # end
+  end
 end
