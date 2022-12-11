@@ -105,19 +105,8 @@ RSpec.describe 'Add User Mutation' do
     let(:user) { create(:user, id: 1) }
 
     it '::type_error' do
-      query = <<~GQL
-        mutation {
-          addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
-            user {
-              id
-              username
-              isAdmin
-            }
-          }
-        }
-      GQL
-
       result = SqueakrBeSchema.type_error(mutation.field, mutation.context)
+
       expect(result).to be_nil
     end
 
