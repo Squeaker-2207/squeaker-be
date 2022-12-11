@@ -130,14 +130,8 @@ RSpec.describe 'Add User Mutation' do
 
     it '::object_from_id' do
       query = <<~GQL
-        mutation {
-          addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
-            user {
-              id
-              username
-              isAdmin
-            }
-          }
+        query {
+          id: 1
         }
       GQL
 
@@ -146,21 +140,12 @@ RSpec.describe 'Add User Mutation' do
       expect(result).to be_nil
     end
 
-    # it '::resolve_type' do
-    #   query = <<~GQL
-    #     mutation {
-    #       addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
-    #         user {
-    #           id
-    #           username
-    #           isAdmin
-    #         }
-    #       }
-    #     }
-    #   GQL
-    #
-    #   result = SqueakrBeSchema.resolve_type()
-    #   require "pry"; binding.pry
-    # end
+    it '::resolve_type' do
+      resolution = mutation.resolve(params: {
+          username: 'new_username'
+        })
+
+      expect{SqueakrBeSchema.resolve_type(resolution, user, mutation.context)}.to raise_error(GraphQL::RequiredImplementationMissingError)
+    end
   end
 end
