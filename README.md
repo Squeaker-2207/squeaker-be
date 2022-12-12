@@ -6,6 +6,7 @@
 [![ruby][ruby]][ruby-url] [![ror][ror]][ror-url] [![Postgres][Postgres]][Postgres-url] [![GitHub Actions][GitHub Actions]][GitHub Actions-url] [![GraphQL][GraphQL]][GraphQL-url]
 
 #### Contributors: [Gavin Carew](https://github.com/gjcarew) | [Jedeo Manirikumwenatwe](https://github.com/Jedeo) | [Noah van Ekdom](https://github.com/noahvanekdom) | [Colby Pearce](https://github.com/Crpearce) | [Anna Marie Sterling](https://github.com/AMSterling) | [Catalyst](https://github.com/Catalyst4Change) | [Ken Lenhart](https://github.com/Penitent0)
+
 </div>
 
 ---
@@ -19,7 +20,9 @@ Squeakr uses a service-oriented architecture with a React frontend.
 [Check out the the front-end repo](https://github.com/Squeaker-2207/squeaker-fe)
 
 ---
+
 # <a name="contents"></a> Table of contents
+
 - [Architecture](#architecture)
 - [Database setup](#database-setup)
   - [Required API keys](#required-keys)
@@ -32,11 +35,12 @@ Squeakr uses a service-oriented architecture with a React frontend.
   - [Delete a squeak](#delete-squeak)
   - [Add a squeak](#add-squeak)
 
-
 ---
 
 # <a name="architecture"></a>Architecture
+
 [Back to top](#contents)
+
 # <img src="app/assets/images/schema-diagram.png">
 
 Squeakr was built with test-driven development, with Rspec used for testing. It is built with Rails conventions over configuration as a guiding principle. A service-facade design pattern is used when calling external API services.
@@ -44,6 +48,7 @@ Squeakr was built with test-driven development, with Rspec used for testing. It 
 The backend is designed with GraphQL best practices in mind for ultimate flexibility in access. Detailed information about GraphQL queries available can be found in the [Endpoints](#endpoints) section.
 
 ---
+
 # <a name="database-setup"></a>Database Setup
 
 Live endpoints can be found by sending a `POST` request to `https://squeakr-be.fly.dev/graphql/`.
@@ -61,30 +66,39 @@ Reset and seed the database:
 ```sh
 rake db:{drop,create,migrate,seed}
 ```
+
 ## <a name="required-keys"></a> Required keys
 
 Squeakr uses Google's <a href="https://developers.perspectiveapi.com/s/docs-get-started?language=en_US" target="_blank" rel="noopener noreferrer">Perspective API</a> to assist with content moderation. It also uses a custom <a href="https://www.nyckel.com/" target="_blank" rel="noopener noreferrer">Nyckel ML API</a> that you will need to set up separately.
 
 Once you have your keys, set up your environment with
+
 ```sh
 bundle exec figaro install
 ```
+
  Then add your keys to `config/application.yml`:
+
 ```ruby
 MODERATION_ID: <YOUR_NYCKEL_FUNCTION_ID>
 
 PERSPECTIVE_KEY: <YOUR_PERSPECTIVE_KEY>
 ```
+
 Start a rails server, and you're ready to query
+
 ```sh
 rails s
 ```
+
 ---
+
 # <a name="endpoints"></a>Endpoints
 
 All endpoints can be accessed with a `POST` request to the base url `https://squeakr-be.fly.dev/graphql/` in production. The header `Content-Type` with a value of `application/json` is required for all queries and mutations. The query (or mutation) should be sent in the body of the request.
 
 ## <a name="fetch-users"></a> fetchUsers
+
 [Back to top](#contents)
 
 Returns all users.
@@ -98,6 +112,7 @@ Returns all users.
    | **updatedAt** | ~ | DateTime       |
 
 **Sample query**
+
 ```graphql
 query {
         fetchUsers {
@@ -110,8 +125,8 @@ query {
       }
 ```
 
-
 **Sample response (status 200)**
+
  ```json
 "data": {
         "fetchUsers": [
@@ -133,8 +148,11 @@ query {
         ]
 }
  ```
+
 ---
+
 ## <a name="fetch-user"></a> fetchUser
+
 [Back to top](#contents)
 
 Returns a single user by their user ID.
@@ -156,6 +174,7 @@ Returns a single user by their user ID.
 <br>
 
 **Sample mutation**
+
 ```graphql
 query {
         fetchUser(id: "4") {
@@ -165,9 +184,11 @@ query {
         }
       }
 ```
+
 <br>
 
 **Sample response (status 200)**
+
  ```json
 {
     "data": {
@@ -179,8 +200,11 @@ query {
     }
 }
  ```
+
 ---
+
 ## <a name="add-user"></a> addUser
+
 [Back to top](#contents)
 
 Add a user to the database.
@@ -203,6 +227,7 @@ Add a user to the database.
 <br>
 
 **Sample query**
+
 ```graphql
 mutation {
         addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
@@ -215,8 +240,8 @@ mutation {
       }
 ```
 
-
 **Sample response (status 201)**
+
  ```json
  {
     "data": {
@@ -230,8 +255,11 @@ mutation {
     }
 }
  ```
+
 ---
+
 ## <a name="all-squeaks"></a> allSqueaks
+
 [Back to top](#contents)
 
 Returns all squeaks in the database.
@@ -250,6 +278,7 @@ Returns all squeaks in the database.
 <br>
 
 **Sample query**
+
 ```graphql
 query {
   allSqueaks {
@@ -267,8 +296,8 @@ query {
 }
 ```
 
-
 **Sample response (status 200)**
+
  ```json
 {
     "data": {
@@ -300,8 +329,11 @@ query {
     }
 }
  ```
+
  ---
- ## <a name="reported-squeaks"></a> reportedSqueaks
+
+## <a name="reported-squeaks"></a> reportedSqueaks
+
 [Back to top](#contents)
 
 Returns reported squeaks in the database.
@@ -317,8 +349,8 @@ Returns reported squeaks in the database.
    | **user** | The user who created the squeak | User |
    | **createdAt** | ~ | DateTime        |
 
-
 **Sample query**
+
 ```graphql
 query {
   reportedSqueaks {
@@ -337,34 +369,37 @@ query {
 }
 ```
 
-
 **Sample response (status 200)**
+
  ```json
 {
     "data": {
         "reportedSqueaks": [
-      	    {
-       		"id": "61",
-        	"content": "Random squeak",
-        	"reports": 1,
-        	"nuts": 0,
-        	"approved": null,
-        	"score": {
-          	    "metric": "IDENTITY_ATTACK",
-         	    "probability": 0.0052906936
-            	 },
-        	 "user": {
-          	    "username": "User 2"
-            	 },
-        	 "createdAt": "2022-12-07T21:59:24Z"
-     	     },
-	     ...
-    	]
+           {
+         "id": "61",
+         "content": "Random squeak",
+         "reports": 1,
+         "nuts": 0,
+         "approved": null,
+         "score": {
+               "metric": "IDENTITY_ATTACK",
+              "probability": 0.0052906936
+              },
+          "user": {
+               "username": "User 2"
+              },
+          "createdAt": "2022-12-07T21:59:24Z"
+           },
+      ...
+     ]
     }
 }
  ```
+
  ---
+
 ## <a name="delete-squeak"></a> deleteSqueak
+
 [Back to top](#contents)
 
 Delete a squeak by ID.
@@ -373,9 +408,7 @@ Delete a squeak by ID.
    | --------- | ----------- | --------- |
    | **id** | Squeak primary key (required) | String        |
 
-
   <br>
-
 
    | Fields      | Description       | Data type |
    | ----------- | ----------- | ----------- |
@@ -387,13 +420,13 @@ Delete a squeak by ID.
    | **user** | ID of the user who created the squeak | Integer |
    | **createdAt** | ~ | DateTime        |
 
-
 <br>
 
 **Sample mutation**
+
 ```graphql
 mutation {
-	deleteSqueak(input: {id: 7 }) {
+ deleteSqueak(input: {id: 7 }) {
     squeak {
       id
       content
@@ -402,8 +435,8 @@ mutation {
 }
 ```
 
-
 **Sample response (status 200)**
+
  ```json
 {
   "data": {
@@ -416,9 +449,11 @@ mutation {
   }
 }
  ```
+
  ---
 
- ## <a name="add-squeak"></a> addSqueak
+## <a name="add-squeak"></a> addSqueak
+
 [Back to top](#contents)
 
 Add a squeak.
@@ -428,9 +463,7 @@ Add a squeak.
    | **content** | Squeak message content (required) | String        |
    | **user_id** | Squeak message contant (required) | ID       |
 
-
   <br>
-
 
    | Fields      | Description       | Data type |
    | ----------- | ----------- | ----------- |
@@ -445,24 +478,25 @@ Add a squeak.
 <br>
 
 **Sample mutation**
+
 ```graphql
 mutation {
-	addSqueak(input: {params: { content: "Birds are not real.", userId: "1"} }) {
+ addSqueak(input: {params: { content: "Birds are not real.", userId: "1"} }) {
     squeak {
       id
       content
       user {
-      	id
-	username
-	isAdmin
- 	}
+       id
+ username
+ isAdmin
+  }
       }
     }
   }
 ```
 
-
 **Sample response (status 200)**
+
  ```json
 {
   "data": {
@@ -470,16 +504,106 @@ mutation {
       "squeak": {
         "id": "10",
         "content":  "Birds are not real."
-	    "user": {
-		    "id": "1",
-		    "username": "A real good user",
-		    "isAdmin": false
-			}
-	     }  
-	}  
+     "user": {
+      "id": "1",
+      "username": "A real good user",
+      "isAdmin": false
+   }
+      }
+ }
    }
 }
  ```
+
+ ---
+
+## <a name="update-squeak"></a> updateSqueak
+
+[Back to top](#contents)
+
+Update a squeak by ID.
+
+   | Parameter | Description | Data type | Required |
+   | --------- | ----------- | --------- | -------- |
+   | **id** | Squeak primary key (required) | String | True  |
+   | **report** | Report argument | Boolean | False |
+   | **nut** | Nut argument | Boolean | False |
+
+  <br>
+
+   | Fields      | Description       | Data type |
+   | ----------- | ----------- | ----------- |
+   | **id** | Primary key | String        |
+   | **content** | The text of the squeak | String        |
+   | **reports** | Number of times a squeak has been reported | Integer |
+   | **nuts** | Number of 'nuts' (likes) | Integer |
+   | **approved** | Whether a squeak has been approved by a moderator | Boolean |
+   | **user** | ID of the user who created the squeak | Integer |
+   | **createdAt** | ~ | DateTime        |
+
+<br>
+
+**Sample mutation(Report)**
+
+```graphql
+mutation {
+  updateSqueak(input: {id: 7, report: true }) {
+    squeak {
+      id
+      content
+      reports
+    }
+  }
+}
+```
+
+**Sample response (report) (status 200)**
+
+ ```json
+{
+  "data": {
+    "updateSqueak": {
+      "squeak": {
+        "id": "3",
+        "content": "I sure hope this squeak stays up forever",
+        "reports": 1
+      }
+    }
+  }
+}
+ ```
+
+**Sample mutation(Nut)**
+
+ ```graphql
+mutation {
+  updateSqueak(input: {id: 7, nut: true }) {
+    squeak {
+      id
+      content
+      nuts
+    }
+  }
+}
+```
+
+**Sample response (Nut) (status 200)**
+
+ ```json
+{
+  "data": {
+    "updateSqueak": {
+      "squeak": {
+        "id": "3",
+        "content": "I sure hope this squeak stays up forever",
+        "nuts": 1
+      }
+    }
+  }
+}
+ ```
+
+ ---
 <!-- BADGE LINKS -->
 
 [ruby]: https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white
