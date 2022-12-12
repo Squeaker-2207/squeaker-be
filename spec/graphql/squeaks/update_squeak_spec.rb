@@ -147,11 +147,15 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
   end
   
   describe 'Admin approval' do
+    before :each do 
+      @reported_squeak = create(:squeak, id: 2, user: @user, reports: 5, nuts: 1, approved: nil)
+    end
+
     describe 'When an admin approves a squeak' do
       before :each do 
         @query = <<~GQL
           mutation {
-            updateSqueak(input: { id: 1, approved: true }) {
+            updateSqueak(input: { id: 2, approved: true }) {
               squeak {
                 id
                 content
@@ -169,32 +173,59 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
       end
 
       it 'The squeak status is changed to approved' do
-        expect(@squeak.approved).to be_nil
+        expect(@reported_squeak.approved).to be_nil
 
         result = SqueakrBeSchema.execute(@query)
         expect(result.dig("data")).to be_a(Hash)
         expect(result.dig("data", "updateSqueak", "squeak")).to be_a(Hash)
         squeak_return = result.dig("data", "updateSqueak", "squeak")
-        expect(squeak_return.dig("approved")).to eq 'true'
-        expect(@squeak.approved).to be(true)
+        expect(squeak_return.dig("approved")).to be(true)
+
+        @reported_squeak.reload
+        expect(@reported_squeak.approved).to be(true)
       end
 
       it 'The reports are reset to 0' do 
-        @squeak.reports = 5
-
         result = SqueakrBeSchema.execute(@query)
         expect(result.dig("data")).to be_a(Hash)
         expect(result.dig("data", "updateSqueak", "squeak")).to be_a(Hash)
         squeak_return = result.dig("data", "updateSqueak", "squeak")
         expect(squeak_return.dig("reports")).to eq 0
-        expect(@squeak.reports).to eq(0)
+
+        @reported_squeak.reload
+        expect(@reported_squeak.reports).to eq(0)
       end
     end
 
-    describe 'When an admin rejects a squeak' do 
+    describe 'When an admin rejects a squeak' do
+      it 'The squeak approved boolean is changed to false' do
+        query = <<~GQL
+          mutation {
+            updateSqueak(input: { id: 2, approved: false }) {
+              squeak {
+                id
+                content
+                reports
+                nuts
+                approved
+                score{
+                  metric
+                  probability
+                }
+              }
+            }
+          }
+        GQL
 
-      it 'The squeak approved boolean is changed to false'
+        result = SqueakrBeSchema.execute(query)
+        expect(result.dig("data")).to be_a(Hash)
+        expect(result.dig("data", "updateSqueak", "squeak")).to be_a(Hash)
+        squeak_return = result.dig("data", "updateSqueak", "squeak")
+        expect(squeak_return.dig("approved")).to be(false)
 
+        @reported_squeak.reload
+        expect(@reported_squeak.approved).to be(false)
+      end
     end
   end
 end
