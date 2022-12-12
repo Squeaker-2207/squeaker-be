@@ -426,7 +426,8 @@ Add a squeak.
    | Parameter | Description | Data type |
    | --------- | ----------- | --------- |
    | **content** | Squeak message content (required) | String        |
-   | **user_id** | Squeak message contant (required) | ID       |
+   | **user_id** | Squeak message content (required) | ID       |
+   | **approved** | Whether a squeak has been approved by a moderator | Boolean |
 
 
   <br>
@@ -478,6 +479,38 @@ mutation {
 	     }  
 	}  
    }
+}
+ ```
+
+
+ **Sample mutation (Approved)**
+
+ ```graphql
+mutation {
+  updateSqueak(input: {id: 7, approved: true }) {
+    squeak {
+      id
+      content
+      approved
+      reports
+    }
+  }
+}
+```
+
+**Sample response (Approved) (status 200)**
+
+ ```json
+{
+  "data": {
+    "updateSqueak": {
+      "squeak": {
+        "id": "3",
+        "content": "I sure hope this squeak stays up forever",
+        "nuts": 1
+      }
+    }
+  }
 }
  ```
 <!-- BADGE LINKS -->
