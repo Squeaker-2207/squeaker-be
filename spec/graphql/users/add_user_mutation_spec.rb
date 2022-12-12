@@ -110,57 +110,12 @@ RSpec.describe 'Add User Mutation' do
       expect(result).to be_nil
     end
 
-    it '::id_from_object' do
-      query = <<~GQL
-        mutation {
-          addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
-            user {
-              id
-              username
-              isAdmin
-            }
-          }
-        }
-      GQL
+    it '::resolve_type' do
+      resolution = mutation.resolve(params: {
+          username: 'new_username'
+        })
 
-      result = SqueakrBeSchema.id_from_object(user, :addUser, query)
-
-      expect(result).to be_a String
+      expect{SqueakrBeSchema.resolve_type(resolution, user, mutation.context)}.to raise_error(GraphQL::RequiredImplementationMissingError)
     end
-
-    it '::object_from_id' do
-      query = <<~GQL
-        mutation {
-          addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
-            user {
-              id
-              username
-              isAdmin
-            }
-          }
-        }
-      GQL
-
-      result = SqueakrBeSchema.object_from_id(user.id, query)
-
-      expect(result).to be_nil
-    end
-
-    # it '::resolve_type' do
-    #   query = <<~GQL
-    #     mutation {
-    #       addUser(input: { params: { username: "Test_User", isAdmin: false } }) {
-    #         user {
-    #           id
-    #           username
-    #           isAdmin
-    #         }
-    #       }
-    #     }
-    #   GQL
-    #
-    #   result = SqueakrBeSchema.resolve_type()
-    #   require "pry"; binding.pry
-    # end
   end
 end
