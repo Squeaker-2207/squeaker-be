@@ -529,6 +529,7 @@ Update a squeak by ID.
    | **id** | Squeak primary key (required) | String | True  |
    | **report** | Report argument | Boolean | False |
    | **nut** | Nut argument | Boolean | False |
+   | **approved** | Whether a squeak has been approved by a moderator | Boolean | False |
 
   <br>
 
@@ -604,9 +605,6 @@ mutation {
 }
  ```
 
- ---
-
-
  **Sample mutation (Approved)**
 
  ```graphql
@@ -629,9 +627,10 @@ mutation {
   "data": {
     "updateSqueak": {
       "squeak": {
-        "id": "3",
-        "content": "I sure hope this squeak stays up forever",
-        "nuts": 1
+        "id": "7",
+        "content": "This is squeak #6",
+        "approved": true,
+        "reports": 0
       }
     }
   }
