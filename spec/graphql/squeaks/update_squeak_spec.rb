@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Update Squeak Mutation', :vcr do
-  let(:squeak) { create(:squeak, id: 1, reports: 0, nuts:1, approved: nil) }
+  let(:squeak) { create(:squeak, reports: 0, nuts: 1, approved: nil) }
 
   describe "reporting a squeak" do
     before(:each) do
@@ -99,12 +99,12 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
     end
 
     it 'can add a nut to a squeak' do
-      expect(squeak.nuts).to eq 1
+      expect(squeak.nuts).to eq(1)
       result = SqueakrBeSchema.execute(@query)
       expect(result.dig("data")).to be_a(Hash)
       expect(result.dig("data", "updateSqueak", "squeak")).to be_a(Hash)
       squeak_return = result.dig("data", "updateSqueak", "squeak")
-      expect(squeak_return.dig("nuts")).to eq 2
+      expect(squeak_return.dig("nuts")).to eq(2)
     end
 
     it 'does not modify the other values of a squeak when nutting' do
@@ -144,9 +144,9 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
   end
 
   describe 'Admin actions' do
-    let(:reported_squeak) { create(:squeak, id: 2, reports: 5, nuts: 1, approved: nil) }
+    let(:reported_squeak) { create(:squeak, reports: 5, approved: nil) }
 
-    describe 'approval of reported squeaks' do
+    context 'approve reported squeak' do
       before :each do
         @query = <<~GQL
           mutation {
@@ -192,7 +192,7 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
       end
     end
 
-    describe 'rejection of reported squeak' do
+    context 'reject reported squeak' do
       it 'updates approved status to false' do
         query = <<~GQL
           mutation {

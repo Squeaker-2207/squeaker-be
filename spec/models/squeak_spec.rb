@@ -20,36 +20,42 @@ RSpec.describe Squeak, type: :model do
     end
   end
 
-  describe 'model methods' do
-    let(:squeaks) { create_list(:squeak, 3) }
-    let(:squeak1) { squeaks.first }
-    let(:squeak2) { squeaks.second }
-    let(:squeak3) { squeaks.third }
-    let(:squeak4) { create(:squeak, approved: false) }
-    
+  describe 'model methods', :vcr do
+    let(:squeaks) { create_list(:squeak, 10) }
 
     describe '::reported' do
       it 'scopes reported squeaks' do
+        squeaks
         Squeak.reported.each do |squeak|
 
+          expect(squeak.approved).to eq(true).or eq(nil)
+          expect(squeak.approved).to_not eq(false)
           expect(squeak.reports).to be > 0
         end
       end
     end
 
-    describe '::permitted' do 
-      it 'scopes squeaks that have not been unapproved by the moderator' do 
+    describe '::permitted' do
+      it 'scopes squeaks that have not been unapproved by the moderator' do
+        squeaks
         Squeak.permitted.each do |squeak|
-          expect(squeak.permitted).to eq(false)
+
+          expect(squeak.approved).to eq(true).or eq(nil)
+          expect(squeak.approved).to_not eq(false)
         end
       end
     end
 
-    describe '#score', :vcr do
+    describe '#score' do
       it 'provides probability score' do
+        squeaks
+        Squeak.reported.each do |squeak|
 
-        expect(squeak1.score.metric).to eq('IDENTITY_ATTACK')
-        expect(squeak1.score.probability).to be_a Float
+          expect(squeak.approved).to eq(true).or eq(nil)
+          expect(squeak.approved).to_not eq(false)
+          expect(squeak.score.metric).to eq('IDENTITY_ATTACK')
+          expect(squeak.score.probability).to be_a Float
+        end
       end
     end
   end

@@ -2,9 +2,10 @@ class Squeak < ApplicationRecord
   belongs_to :user
   validates :content, presence: true
   # validate :filter
+  validate :score, unless: -> { reports.zero? }
 
   scope :reported, -> { permitted.where('reports > 0') }
-  scope :permitted, -> { where('approved != false') }
+  scope :permitted, -> { where(approved: [nil, true]) }
 
   def score
     ScoreFetcher.fetch_score(self)

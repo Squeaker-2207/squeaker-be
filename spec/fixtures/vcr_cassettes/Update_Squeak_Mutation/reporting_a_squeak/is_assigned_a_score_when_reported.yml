@@ -5,7 +5,7 @@ http_interactions:
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Autem corporis deserunt quis."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Commodi eos qui ipsum."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 17:35:43 GMT
+      - Tue, 13 Dec 2022 21:23:08 GMT
       Server:
       - ESF
       Cache-Control:
@@ -52,15 +52,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 29,
+                  "end": 22,
                   "score": {
-                    "value": 0.0007630808,
+                    "value": 0.00155391,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0007630808,
+                "value": 0.00155391,
                 "type": "PROBABILITY"
               }
             }
@@ -72,5 +72,78 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 17:35:42 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:08 GMT
+- request:
+    method: post
+    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"comment":{"text":"Commodi eos qui ipsum."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 13 Dec 2022 21:23:09 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "attributeScores": {
+            "IDENTITY_ATTACK": {
+              "spanScores": [
+                {
+                  "begin": 0,
+                  "end": 22,
+                  "score": {
+                    "value": 0.00155391,
+                    "type": "PROBABILITY"
+                  }
+                }
+              ],
+              "summaryScore": {
+                "value": 0.00155391,
+                "type": "PROBABILITY"
+              }
+            }
+          },
+          "languages": [
+            "en"
+          ],
+          "detectedLanguages": [
+            "la"
+          ]
+        }
+  recorded_at: Tue, 13 Dec 2022 21:23:09 GMT
 recorded_with: VCR 6.1.0

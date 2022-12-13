@@ -2,55 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Ratione eos ipsum cumque."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 402
-      message: Payment Required
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 08 Dec 2022 23:57:48 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Error from cloudfront
-      Via:
-      - 1.1 d09fd0ac0a8733df98f134da74eec098.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - DEN52-P2
-      X-Amz-Cf-Id:
-      - DMBwLsiT2okAIMgoEzTSn0hPXeOJk022m1spO9wl4HPnBIPtf3JuUg==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
-        plan"}'
-  recorded_at: Thu, 08 Dec 2022 23:57:48 GMT
-- request:
-    method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Ratione eos ipsum cumque."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Est et beatae et."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -72,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Thu, 08 Dec 2022 23:57:48 GMT
+      - Tue, 13 Dec 2022 21:27:33 GMT
       Server:
       - ESF
       Cache-Control:
@@ -97,15 +52,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 25,
+                  "end": 17,
                   "score": {
-                    "value": 0.0030523231,
+                    "value": 0.0005040958,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0030523231,
+                "value": 0.0005040958,
                 "type": "PROBABILITY"
               }
             }
@@ -117,5 +72,78 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Thu, 08 Dec 2022 23:57:48 GMT
+  recorded_at: Tue, 13 Dec 2022 21:27:33 GMT
+- request:
+    method: post
+    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"comment":{"text":"Est et beatae et."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 13 Dec 2022 21:27:33 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "attributeScores": {
+            "IDENTITY_ATTACK": {
+              "spanScores": [
+                {
+                  "begin": 0,
+                  "end": 17,
+                  "score": {
+                    "value": 0.0005040958,
+                    "type": "PROBABILITY"
+                  }
+                }
+              ],
+              "summaryScore": {
+                "value": 0.0005040958,
+                "type": "PROBABILITY"
+              }
+            }
+          },
+          "languages": [
+            "en"
+          ],
+          "detectedLanguages": [
+            "la"
+          ]
+        }
+  recorded_at: Tue, 13 Dec 2022 21:27:33 GMT
 recorded_with: VCR 6.1.0

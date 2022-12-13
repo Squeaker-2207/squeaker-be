@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Squeaks Query', :vcr do
   let(:user) { create(:user) }
-  let(:squeaks) { create_list(:squeak, 10, user_id: user.id) }
+  let(:squeaks) { create_list(:squeak, 10, reports: 0, user: user) }
 
   it 'returns a list of squeaks' do
     query = <<~GQL
@@ -31,16 +31,13 @@ RSpec.describe 'Squeaks Query', :vcr do
       expect(squeak["content"]).to be_a(String)
       expect(squeak["reports"]).to be_a(Integer)
       expect(squeak["nuts"]).to be_an(Integer)
-      expect(squeak["approved"]).to be_in([true, false])
+      expect(squeak["approved"]).to be_in([nil, true])
       expect(squeak["user"]).to be_a(Hash)
       expect(squeak["createdAt"]).to be_a(String)
     end
   end
 
-  it 'only returns squeaks where the approved attribute is either true or nil' do 
-    create_list(:squeak, 3, approved: false)
-    create_list(:squeak, 10, approved: [true, nil].sample)
-    expect(Squeak.all.length).to eq(13)
+  it 'only returns squeaks where the approved attribute is either true or nil' do
     query = <<~GQL
       query {
         allSqueaks {
@@ -61,7 +58,8 @@ RSpec.describe 'Squeaks Query', :vcr do
 
     squeak_list = result.dig("data", "allSqueaks")
 
-    expect(squeak_list.length).to eq(10)
+    expect(Squeak.all.count).to eq(10)
+    expect(Squeak.permitted.count).to eq(squeak_list.length)
 
     result.dig("data", "allSqueaks").each do |squeak|
       expect(squeak["approved"]).to be_in([true, nil])

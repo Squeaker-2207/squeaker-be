@@ -33,8 +33,9 @@ RSpec.describe 'Reported Squeaks Query', :vcr do
       expect(squeak['id']).to be_a String
       expect(squeak['content']).to be_a String
       expect(squeak['reports']).to be_an Integer
+      expect(squeak['reports']).to be > 0
       expect(squeak['nuts']).to be_an Integer
-      expect(squeak['approved']).to be_in([true, false])
+      expect(squeak['approved']).to be_in([nil, true])
       expect(squeak['score']).to be_a Hash
       expect(squeak['score']['metric']).to be_a String
       expect(squeak['score']['metric']).to eq('IDENTITY_ATTACK')

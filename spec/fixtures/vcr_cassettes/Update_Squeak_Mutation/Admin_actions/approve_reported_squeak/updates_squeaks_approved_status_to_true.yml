@@ -5,7 +5,7 @@ http_interactions:
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Beatae eveniet officia at."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Tenetur perferendis saepe ut."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -52,15 +52,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 26,
+                  "end": 29,
                   "score": {
-                    "value": 0.0007630808,
+                    "value": 0.0019608864,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0007630808,
+                "value": 0.0019608864,
                 "type": "PROBABILITY"
               }
             }
@@ -78,7 +78,7 @@ http_interactions:
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Beatae eveniet officia at."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Tenetur perferendis saepe ut."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -100,7 +100,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:09 GMT
+      - Tue, 13 Dec 2022 21:23:10 GMT
       Server:
       - ESF
       Cache-Control:
@@ -125,15 +125,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 26,
+                  "end": 29,
                   "score": {
-                    "value": 0.0007630808,
+                    "value": 0.0019608864,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0007630808,
+                "value": 0.0019608864,
                 "type": "PROBABILITY"
               }
             }
