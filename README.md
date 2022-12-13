@@ -461,7 +461,8 @@ Add a squeak.
    | Parameter | Description | Data type |
    | --------- | ----------- | --------- |
    | **content** | Squeak message content (required) | String        |
-   | **user_id** | Squeak message contant (required) | ID       |
+   | **user_id** | Squeak message content (required) | ID       |
+   | **approved** | Whether a squeak has been approved by a moderator | Boolean |
 
   <br>
 
@@ -528,6 +529,7 @@ Update a squeak by ID.
    | **id** | Squeak primary key (required) | String | True  |
    | **report** | Report argument | Boolean | False |
    | **nut** | Nut argument | Boolean | False |
+   | **approved** | Whether a squeak has been approved by a moderator | Boolean | False |
 
   <br>
 
@@ -603,7 +605,37 @@ mutation {
 }
  ```
 
- ---
+ **Sample mutation (Approved)**
+
+ ```graphql
+mutation {
+  updateSqueak(input: {id: 7, approved: true }) {
+    squeak {
+      id
+      content
+      approved
+      reports
+    }
+  }
+}
+```
+
+**Sample response (Approved) (status 200)**
+
+ ```json
+{
+  "data": {
+    "updateSqueak": {
+      "squeak": {
+        "id": "7",
+        "content": "This is squeak #6",
+        "approved": true,
+        "reports": 0
+      }
+    }
+  }
+}
+ ```
 <!-- BADGE LINKS -->
 
 [ruby]: https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white
