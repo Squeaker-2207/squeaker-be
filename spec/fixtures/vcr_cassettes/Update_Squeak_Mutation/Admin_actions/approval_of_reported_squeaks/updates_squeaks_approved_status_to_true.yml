@@ -61,6 +61,7 @@ http_interactions:
               ],
               "summaryScore": {
                 "value": 0.0071035884,
+
                 "type": "PROBABILITY"
               }
             }

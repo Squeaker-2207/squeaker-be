@@ -4,7 +4,7 @@ module Queries
     type [Types::SqueakType], null: false
 
     def resolve
-      Squeak.all.order(created_at: :desc)
+      Squeak.permitted.order(created_at: :desc)
     end
   end
 end
