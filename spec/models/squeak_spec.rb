@@ -21,7 +21,7 @@ RSpec.describe Squeak, type: :model do
   end
 
   describe 'model methods', :vcr do
-    let(:squeaks) { create_list(:squeak, 10) }
+    let(:squeaks) { create_list(:squeak, 5) }
 
     describe '::reported' do
       it 'scopes reported squeaks' do
