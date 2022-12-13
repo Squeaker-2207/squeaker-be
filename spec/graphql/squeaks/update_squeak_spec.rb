@@ -32,10 +32,10 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
       expect(squeak_return.dig("reports")).to eq(1)
       expect(squeak_return.dig("id")).to eq(squeak.id.to_s)
       expect(squeak_return.dig("content")).to eq(squeak.content)
-      expect(result.dig("data", "updateSqueak", "squeak", 'id')).to be_a(String)
+      expect(squeak_return.dig("id")).to be_a(String)
     end
 
-    it 'after a squeak is reported, it is assigned a perspective score set' do
+    it 'is assigned a score when reported' do
       result = SqueakrBeSchema.execute(@query)
       expect(result.dig("data")).to be_a(Hash)
       squeak_return = result.dig("data", "updateSqueak", "squeak")
@@ -44,7 +44,7 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
       expect(squeak_return.dig("score", "probability")).to be_a Float
     end
 
-    it "reporting a squeak does not change any other squeak values" do
+    it "does not change any other squeak values when reported" do
       result = SqueakrBeSchema.execute(@query)
       squeak_return = result.dig("data", "updateSqueak", "squeak")
       expect(squeak_return.dig("content")).to eq(squeak.content)
@@ -143,10 +143,10 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
     end
   end
 
-  describe 'Admin approval' do
+  describe 'Admin actions' do
     let(:reported_squeak) { create(:squeak, id: 2, reports: 5, nuts: 1, approved: nil) }
 
-    describe 'When an admin approves a squeak' do
+    describe 'approval of reported squeaks' do
       before :each do
         @query = <<~GQL
           mutation {
@@ -167,7 +167,7 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
         GQL
       end
 
-      it 'The squeak status is changed to approved' do
+      it 'updates squeaks approved status to true' do
         expect(reported_squeak.approved).to be_nil
 
         result = SqueakrBeSchema.execute(@query)
@@ -180,7 +180,7 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
         expect(reported_squeak.approved).to be(true)
       end
 
-      it 'The reports are reset to 0' do
+      it 'resets reports count to 0 after approval' do
         result = SqueakrBeSchema.execute(@query)
         expect(result.dig("data")).to be_a(Hash)
         expect(result.dig("data", "updateSqueak", "squeak")).to be_a(Hash)
@@ -192,8 +192,8 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
       end
     end
 
-    describe 'When an admin rejects a squeak' do
-      it 'The squeak approved boolean is changed to false' do
+    describe 'rejection of reported squeak' do
+      it 'updates approved status to false' do
         query = <<~GQL
           mutation {
             updateSqueak(input: { id: "#{reported_squeak.id}", approved: false }) {
