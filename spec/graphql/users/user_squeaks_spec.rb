@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User squeaks', :vcr do
   let(:user) { create(:user) }
   let(:user_no_squeaks) { create(:user) }
-  let(:squeaks) { create_list(:squeak, 10, user_id: user.id) }
+  let(:squeaks) { create_list(:squeak, 10, reports: 0, user_id: user.id) }
 
   it 'Returns squeaks associated with a user' do
     query = <<~GQL

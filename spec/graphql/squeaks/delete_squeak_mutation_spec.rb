@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Delete Squeak Mutation', :vcr do
   it 'delete a squeak' do
     user = create(:user)
-    squeak = create(:squeak, id: 1, user: user)
+    squeak = create(:squeak, id: 1, reports: 0, user: user)
     query = <<~GQL
     mutation {
       deleteSqueak(input: { id: 1 }) {

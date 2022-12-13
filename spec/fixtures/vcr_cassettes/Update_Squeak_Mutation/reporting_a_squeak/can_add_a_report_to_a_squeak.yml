@@ -2,100 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Ipsa et possimus nisi."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 402
-      message: Payment Required
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 09 Dec 2022 22:45:31 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Error from cloudfront
-      Via:
-      - 1.1 074df32306fddeb7d54ca41312e6888e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - IAD89-P2
-      X-Amz-Cf-Id:
-      - U3WzqlBUBuALHYRNA81krBcs-cHjIameMqDlSNbbxSLLR_hX3Kk3cA==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
-        plan"}'
-  recorded_at: Fri, 09 Dec 2022 22:45:31 GMT
-- request:
-    method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Ipsa et possimus nisi."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 402
-      message: Payment Required
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 09 Dec 2022 22:45:32 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Error from cloudfront
-      Via:
-      - 1.1 1bd7d779bed244375679d82e1821cc3c.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - IAD89-P2
-      X-Amz-Cf-Id:
-      - lHT9tJh1XNEQwJtChvsmQuEVZWxaUgrc7mBZYfHEiK_yPHG6xDt0zg==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
-        plan"}'
-  recorded_at: Fri, 09 Dec 2022 22:45:32 GMT
-- request:
-    method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Ipsa et possimus nisi."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Voluptas alias architecto et."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -117,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Fri, 09 Dec 2022 22:45:32 GMT
+      - Tue, 13 Dec 2022 21:23:08 GMT
       Server:
       - ESF
       Cache-Control:
@@ -142,15 +52,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 22,
+                  "end": 29,
                   "score": {
-                    "value": 0.00023008042,
+                    "value": 0.00043703718,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.00023008042,
+                "value": 0.00043703718,
                 "type": "PROBABILITY"
               }
             }
@@ -162,5 +72,78 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Fri, 09 Dec 2022 22:45:32 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:08 GMT
+- request:
+    method: post
+    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"comment":{"text":"Voluptas alias architecto et."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 13 Dec 2022 21:23:08 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "attributeScores": {
+            "IDENTITY_ATTACK": {
+              "spanScores": [
+                {
+                  "begin": 0,
+                  "end": 29,
+                  "score": {
+                    "value": 0.00043703718,
+                    "type": "PROBABILITY"
+                  }
+                }
+              ],
+              "summaryScore": {
+                "value": 0.00043703718,
+                "type": "PROBABILITY"
+              }
+            }
+          },
+          "languages": [
+            "en"
+          ],
+          "detectedLanguages": [
+            "la"
+          ]
+        }
+  recorded_at: Tue, 13 Dec 2022 21:23:08 GMT
 recorded_with: VCR 6.1.0

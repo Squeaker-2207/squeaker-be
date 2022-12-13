@@ -5,7 +5,7 @@ http_interactions:
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Fugiat ex inventore tempore."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Non iusto quos molestiae."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -27,7 +27,80 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:03 GMT
+      - Tue, 13 Dec 2022 21:22:59 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "attributeScores": {
+            "IDENTITY_ATTACK": {
+              "spanScores": [
+                {
+                  "begin": 0,
+                  "end": 25,
+                  "score": {
+                    "value": 0.002192123,
+                    "type": "PROBABILITY"
+                  }
+                }
+              ],
+              "summaryScore": {
+                "value": 0.002192123,
+                "type": "PROBABILITY"
+              }
+            }
+          },
+          "languages": [
+            "en"
+          ],
+          "detectedLanguages": [
+            "la"
+          ]
+        }
+  recorded_at: Tue, 13 Dec 2022 21:22:59 GMT
+- request:
+    method: post
+    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"comment":{"text":"Qui porro dolore reiciendis."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 13 Dec 2022 21:22:59 GMT
       Server:
       - ESF
       Cache-Control:
@@ -54,13 +127,13 @@ http_interactions:
                   "begin": 0,
                   "end": 28,
                   "score": {
-                    "value": 4.155033e-06,
+                    "value": 0.010803374,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 4.155033e-06,
+                "value": 0.010803374,
                 "type": "PROBABILITY"
               }
             }
@@ -72,13 +145,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:03 GMT
+  recorded_at: Tue, 13 Dec 2022 21:22:59 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Itaque est sit est."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Maxime et minus nostrum."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -100,7 +173,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:03 GMT
+      - Tue, 13 Dec 2022 21:23:00 GMT
       Server:
       - ESF
       Cache-Control:
@@ -125,15 +198,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 19,
+                  "end": 24,
                   "score": {
-                    "value": 0.0023123662,
+                    "value": 0.0003468549,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0023123662,
+                "value": 0.0003468549,
                 "type": "PROBABILITY"
               }
             }
@@ -145,13 +218,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:03 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:00 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Consequatur quia maxime eius."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Et et nostrum dicta."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -173,80 +246,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:03 GMT
-      Server:
-      - ESF
-      Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
-        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "attributeScores": {
-            "IDENTITY_ATTACK": {
-              "spanScores": [
-                {
-                  "begin": 0,
-                  "end": 29,
-                  "score": {
-                    "value": 8.057151e-06,
-                    "type": "PROBABILITY"
-                  }
-                }
-              ],
-              "summaryScore": {
-                "value": 8.057151e-06,
-                "type": "PROBABILITY"
-              }
-            }
-          },
-          "languages": [
-            "en"
-          ],
-          "detectedLanguages": [
-            "la"
-          ]
-        }
-  recorded_at: Tue, 13 Dec 2022 21:23:03 GMT
-- request:
-    method: post
-    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
-    body:
-      encoding: UTF-8
-      string: '{"comment":{"text":"Ut temporibus a sit."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin
-      - Referer
-      - X-Origin
-      Date:
-      - Tue, 13 Dec 2022 21:23:03 GMT
+      - Tue, 13 Dec 2022 21:23:00 GMT
       Server:
       - ESF
       Cache-Control:
@@ -273,13 +273,13 @@ http_interactions:
                   "begin": 0,
                   "end": 20,
                   "score": {
-                    "value": 0.002330865,
+                    "value": 0.0013226734,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.002330865,
+                "value": 0.0013226734,
                 "type": "PROBABILITY"
               }
             }
@@ -291,13 +291,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:03 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:00 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Vel provident voluptatum nihil."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Dignissimos omnis vitae at."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -319,7 +319,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:03 GMT
+      - Tue, 13 Dec 2022 21:23:00 GMT
       Server:
       - ESF
       Cache-Control:
@@ -344,15 +344,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 31,
+                  "end": 27,
                   "score": {
-                    "value": 0.0029598286,
+                    "value": 0.00023701752,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0029598286,
+                "value": 0.00023701752,
                 "type": "PROBABILITY"
               }
             }
@@ -364,13 +364,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:03 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:00 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Assumenda exercitationem ea quasi."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Dolore occaecati maxime animi."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -392,7 +392,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:04 GMT
+      - Tue, 13 Dec 2022 21:23:00 GMT
       Server:
       - ESF
       Cache-Control:
@@ -417,15 +417,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 34,
+                  "end": 30,
                   "score": {
-                    "value": 0.00044397428,
+                    "value": 1.055017e-05,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.00044397428,
+                "value": 1.055017e-05,
                 "type": "PROBABILITY"
               }
             }
@@ -437,13 +437,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:03 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:00 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Vel repellendus facere fugit."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Incidunt eos facilis tempora."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -465,7 +465,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:04 GMT
+      - Tue, 13 Dec 2022 21:23:00 GMT
       Server:
       - ESF
       Cache-Control:
@@ -492,13 +492,13 @@ http_interactions:
                   "begin": 0,
                   "end": 29,
                   "score": {
-                    "value": 0.0020071338,
+                    "value": 0.00013527341,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0020071338,
+                "value": 0.00013527341,
                 "type": "PROBABILITY"
               }
             }
@@ -510,13 +510,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:04 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:00 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Rerum totam id dolor."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Eius atque delectus quo."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -538,7 +538,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:04 GMT
+      - Tue, 13 Dec 2022 21:23:01 GMT
       Server:
       - ESF
       Cache-Control:
@@ -563,15 +563,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 21,
+                  "end": 24,
                   "score": {
-                    "value": 0.004994711,
+                    "value": 0.0027008436,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.004994711,
+                "value": 0.0027008436,
                 "type": "PROBABILITY"
               }
             }
@@ -583,13 +583,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:04 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:01 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Fugiat ex inventore tempore."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Error libero magni porro."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -611,7 +611,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:04 GMT
+      - Tue, 13 Dec 2022 21:23:01 GMT
       Server:
       - ESF
       Cache-Control:
@@ -636,15 +636,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 28,
+                  "end": 25,
                   "score": {
-                    "value": 4.155033e-06,
+                    "value": 0.028628819,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 4.155033e-06,
+                "value": 0.028628819,
                 "type": "PROBABILITY"
               }
             }
@@ -653,16 +653,17 @@ http_interactions:
             "en"
           ],
           "detectedLanguages": [
-            "la"
+            "la",
+            "it"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:04 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:01 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Itaque est sit est."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Et ut iste eaque."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -684,7 +685,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:04 GMT
+      - Tue, 13 Dec 2022 21:23:01 GMT
       Server:
       - ESF
       Cache-Control:
@@ -709,15 +710,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 19,
+                  "end": 17,
                   "score": {
-                    "value": 0.0023123662,
+                    "value": 0.00033066835,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0023123662,
+                "value": 0.00033066835,
                 "type": "PROBABILITY"
               }
             }
@@ -729,13 +730,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:04 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:01 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Ut temporibus a sit."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Corrupti qui occaecati velit."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -757,7 +758,153 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:05 GMT
+      - Tue, 13 Dec 2022 21:23:01 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "attributeScores": {
+            "IDENTITY_ATTACK": {
+              "spanScores": [
+                {
+                  "begin": 0,
+                  "end": 29,
+                  "score": {
+                    "value": 0.015154205,
+                    "type": "PROBABILITY"
+                  }
+                }
+              ],
+              "summaryScore": {
+                "value": 0.015154205,
+                "type": "PROBABILITY"
+              }
+            }
+          },
+          "languages": [
+            "en"
+          ],
+          "detectedLanguages": [
+            "la"
+          ]
+        }
+  recorded_at: Tue, 13 Dec 2022 21:23:01 GMT
+- request:
+    method: post
+    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"comment":{"text":"Laborum voluptas sit ea."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 13 Dec 2022 21:23:02 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "attributeScores": {
+            "IDENTITY_ATTACK": {
+              "spanScores": [
+                {
+                  "begin": 0,
+                  "end": 24,
+                  "score": {
+                    "value": 0.0015631594,
+                    "type": "PROBABILITY"
+                  }
+                }
+              ],
+              "summaryScore": {
+                "value": 0.0015631594,
+                "type": "PROBABILITY"
+              }
+            }
+          },
+          "languages": [
+            "en"
+          ],
+          "detectedLanguages": [
+            "la"
+          ]
+        }
+  recorded_at: Tue, 13 Dec 2022 21:23:01 GMT
+- request:
+    method: post
+    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"comment":{"text":"Modi et ab repellat."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 13 Dec 2022 21:23:02 GMT
       Server:
       - ESF
       Cache-Control:
@@ -784,13 +931,13 @@ http_interactions:
                   "begin": 0,
                   "end": 20,
                   "score": {
-                    "value": 0.002330865,
+                    "value": 0.011469335,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.002330865,
+                "value": 0.011469335,
                 "type": "PROBABILITY"
               }
             }
@@ -802,13 +949,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:04 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:02 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Vel provident voluptatum nihil."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Possimus sequi hic ab."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -830,7 +977,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:05 GMT
+      - Tue, 13 Dec 2022 21:23:02 GMT
       Server:
       - ESF
       Cache-Control:
@@ -855,15 +1002,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 31,
+                  "end": 22,
                   "score": {
-                    "value": 0.0029598286,
+                    "value": 0.003884775,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0029598286,
+                "value": 0.003884775,
                 "type": "PROBABILITY"
               }
             }
@@ -875,13 +1022,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:05 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:02 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Assumenda exercitationem ea quasi."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Ut rerum iusto ad."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -903,7 +1050,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:05 GMT
+      - Tue, 13 Dec 2022 21:23:02 GMT
       Server:
       - ESF
       Cache-Control:
@@ -928,15 +1075,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 34,
+                  "end": 18,
                   "score": {
-                    "value": 0.00044397428,
+                    "value": 0.0012486777,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.00044397428,
+                "value": 0.0012486777,
                 "type": "PROBABILITY"
               }
             }
@@ -948,13 +1095,13 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:05 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:02 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Vel repellendus facere fugit."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Earum voluptatem maxime voluptas."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -976,7 +1123,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:23:05 GMT
+      - Tue, 13 Dec 2022 21:23:02 GMT
       Server:
       - ESF
       Cache-Control:
@@ -1001,15 +1148,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 29,
+                  "end": 33,
                   "score": {
-                    "value": 0.0020071338,
+                    "value": 0.0018776412,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0020071338,
+                "value": 0.0018776412,
                 "type": "PROBABILITY"
               }
             }
@@ -1021,78 +1168,5 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:23:05 GMT
-- request:
-    method: post
-    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
-    body:
-      encoding: UTF-8
-      string: '{"comment":{"text":"Rerum totam id dolor."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin
-      - Referer
-      - X-Origin
-      Date:
-      - Tue, 13 Dec 2022 21:23:05 GMT
-      Server:
-      - ESF
-      Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
-        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "attributeScores": {
-            "IDENTITY_ATTACK": {
-              "spanScores": [
-                {
-                  "begin": 0,
-                  "end": 21,
-                  "score": {
-                    "value": 0.004994711,
-                    "type": "PROBABILITY"
-                  }
-                }
-              ],
-              "summaryScore": {
-                "value": 0.004994711,
-                "type": "PROBABILITY"
-              }
-            }
-          },
-          "languages": [
-            "en"
-          ],
-          "detectedLanguages": [
-            "la"
-          ]
-        }
-  recorded_at: Tue, 13 Dec 2022 21:23:05 GMT
+  recorded_at: Tue, 13 Dec 2022 21:23:02 GMT
 recorded_with: VCR 6.1.0

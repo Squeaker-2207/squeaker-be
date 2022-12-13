@@ -2,55 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Ipsum commodi iusto omnis."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 402
-      message: Payment Required
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 08 Dec 2022 23:57:23 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Error from cloudfront
-      Via:
-      - 1.1 1c80fe425edf82026702c486fb324fd0.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - DEN52-P2
-      X-Amz-Cf-Id:
-      - daj_reQtvH9z_PoIcfXiMKbx7wxNa4Mm2fNr--M1HNzG_xnSNjM4pg==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
-        plan"}'
-  recorded_at: Thu, 08 Dec 2022 23:57:23 GMT
-- request:
-    method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Ipsum commodi iusto omnis."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Veritatis eligendi a omnis."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -72,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Thu, 08 Dec 2022 23:57:24 GMT
+      - Tue, 13 Dec 2022 21:26:49 GMT
       Server:
       - ESF
       Cache-Control:
@@ -97,15 +52,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 26,
+                  "end": 27,
                   "score": {
-                    "value": 0.0011284347,
+                    "value": 0.000116196396,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0011284347,
+                "value": 0.000116196396,
                 "type": "PROBABILITY"
               }
             }
@@ -117,5 +72,78 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Thu, 08 Dec 2022 23:57:24 GMT
+  recorded_at: Tue, 13 Dec 2022 21:26:49 GMT
+- request:
+    method: post
+    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"comment":{"text":"Veritatis eligendi a omnis."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 13 Dec 2022 21:26:49 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "attributeScores": {
+            "IDENTITY_ATTACK": {
+              "spanScores": [
+                {
+                  "begin": 0,
+                  "end": 27,
+                  "score": {
+                    "value": 0.000116196396,
+                    "type": "PROBABILITY"
+                  }
+                }
+              ],
+              "summaryScore": {
+                "value": 0.000116196396,
+                "type": "PROBABILITY"
+              }
+            }
+          },
+          "languages": [
+            "en"
+          ],
+          "detectedLanguages": [
+            "la"
+          ]
+        }
+  recorded_at: Tue, 13 Dec 2022 21:26:49 GMT
 recorded_with: VCR 6.1.0

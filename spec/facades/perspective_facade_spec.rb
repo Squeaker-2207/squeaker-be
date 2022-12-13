@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe PerspectiveFacade, :vcr do
-  let(:squeak1) { create(:squeak) }
+  let(:squeak) { create(:squeak, reports: 1) }
 
   it 'provides a score for squeak content' do
-    score = PerspectiveFacade.content_score(squeak1)
+    score = PerspectiveFacade.content_score(squeak)
 
     expect(score.metric).to be_a String
     expect(score.metric).to eq('IDENTITY_ATTACK')
