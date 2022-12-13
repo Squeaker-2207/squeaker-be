@@ -3,7 +3,8 @@ class Squeak < ApplicationRecord
   validates :content, presence: true
   # validate :filter
 
-  scope :reported, -> { where('reports > 0') }
+  scope :reported, -> { permitted.where('reports > 0') }
+  scope :permitted, -> { where('approved != false') }
 
   def score
     ScoreFetcher.fetch_score(self)
