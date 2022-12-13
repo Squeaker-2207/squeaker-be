@@ -4,7 +4,7 @@ class Squeak < ApplicationRecord
   # validate :filter
 
   scope :reported, -> { permitted.where('reports > 0') }
-  scope :permitted, -> { where('approved != false') }
+  scope :permitted, -> { where(approved: [true, nil]) }
 
   def score
     ScoreFetcher.fetch_score(self)

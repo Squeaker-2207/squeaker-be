@@ -23,9 +23,12 @@ RSpec.describe Squeak, type: :model do
   describe 'model methods' do
     let(:squeaks) { create_list(:squeak, 3) }
     let(:squeak1) { squeaks.first }
-    let(:squeak2) { squeaks.second }
-    let(:squeak3) { squeaks.third }
-    let(:squeak4) { create(:squeak, approved: false) }
+
+    before :each do 
+      create_list(:squeak, 3, approved: nil)
+      create_list(:squeak, 3, approved: true)
+      create_list(:squeak, 3, approved: false)
+    end
     
 
     describe '::reported' do
@@ -40,7 +43,7 @@ RSpec.describe Squeak, type: :model do
     describe '::permitted' do 
       it 'scopes squeaks that have not been unapproved by the moderator' do 
         Squeak.permitted.each do |squeak|
-          expect(squeak.permitted).to eq(false)
+          expect(squeak.approved).to eq(true).or eq(nil)
         end
       end
     end

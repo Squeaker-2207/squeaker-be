@@ -39,7 +39,7 @@ RSpec.describe 'Squeaks Query', :vcr do
 
   it 'only returns squeaks where the approved attribute is either true or nil' do 
     create_list(:squeak, 3, approved: false)
-    create_list(:squeak, 10, approved: [true, nil].sample)
+    squeaks
     expect(Squeak.all.length).to eq(13)
     query = <<~GQL
       query {
