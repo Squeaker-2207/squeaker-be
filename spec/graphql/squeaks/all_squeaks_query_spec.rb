@@ -37,6 +37,37 @@ RSpec.describe 'Squeaks Query', :vcr do
     end
   end
 
+  it 'only returns squeaks where the approved attribute is either true or nil' do 
+    create_list(:squeak, 3, approved: false)
+    create_list(:squeak, 10, approved: [true, nil].sample)
+    expect(Squeak.all.length).to eq(13)
+    query = <<~GQL
+      query {
+        allSqueaks {
+          id
+          content
+          reports
+          nuts
+          approved
+          user {
+            username
+          }
+          createdAt
+        }
+      }
+    GQL
+
+    result = SqueakrBeSchema.execute(query, context: { all_squeaks: squeaks })
+
+    squeak_list = result.dig("data", "allSqueaks")
+
+    expect(squeak_list.length).to eq(10)
+
+    result.dig("data", "allSqueaks").each do |squeak|
+      expect(squeak["approved"]).to be_in([true, nil])
+    end
+  end
+
   it 'returns error if incorrect field is passed' do
     query = <<~GQL
       query {

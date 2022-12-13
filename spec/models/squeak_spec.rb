@@ -25,12 +25,22 @@ RSpec.describe Squeak, type: :model do
     let(:squeak1) { squeaks.first }
     let(:squeak2) { squeaks.second }
     let(:squeak3) { squeaks.third }
+    let(:squeak4) { create(:squeak, approved: false) }
+    
 
     describe '::reported' do
       it 'scopes reported squeaks' do
         Squeak.reported.each do |squeak|
 
           expect(squeak.reports).to be > 0
+        end
+      end
+    end
+
+    describe '::permitted' do 
+      it 'scopes squeaks that have not been unapproved by the moderator' do 
+        Squeak.permitted.each do |squeak|
+          expect(squeak.permitted).to eq(false)
         end
       end
     end
