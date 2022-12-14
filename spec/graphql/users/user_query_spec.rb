@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Get One User by ID Query' do
+RSpec.describe 'Get One User by ID Query', :vcr do
   let(:user) { create(:user)}
+  let(:squeaks) { create_list(:squeak, 5) }
 
   it 'returns user by id' do
     query = <<~GQL
@@ -90,5 +91,38 @@ RSpec.describe 'Get One User by ID Query' do
     result = SqueakrBeSchema.id_from_object(user, :fetchUser, query)
 
     expect(result).to be_a String
+  end
+
+  it 'returns all squeaks' do
+    query = <<~GQL
+      query {
+        fetchUser(id: "#{user.id}") {
+          id
+          username
+          isAdmin
+          allSqueaks {
+            id
+            content
+            nuts
+            reports
+            approved
+          }
+        }
+      }
+    GQL
+
+    result = SqueakrBeSchema.execute(query, context: { fetch_user: user, all_squeaks: squeaks })
+
+    data = result.dig("data")
+
+    expect(data["fetchUser"]).to be_a(Hash)
+    expect(data["fetchUser"]["allSqueaks"]).to be_a(Array)
+    data["fetchUser"]["allSqueaks"].each do |squeak|
+      expect(squeak["id"]).to be_a(String)
+      expect(squeak["content"]).to be_a(String)
+      expect(squeak["nuts"]).to be_a(Integer)
+      expect(squeak["reports"]).to be_a(Integer)
+      expect(squeak["approved"]).to be_in([nil, true])
+    end
   end
 end

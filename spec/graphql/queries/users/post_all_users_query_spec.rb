@@ -2,7 +2,7 @@ require 'rails_helper'
 
 module Queries
   module Users
-    RSpec.describe 'Post Request for All Users', type: :request do
+    RSpec.describe 'Post Request for All Users', :vcr, type: :request do
       let(:users) { create_list(:user, 5) }
 
       it 'makes successful post request when fetching all users' do

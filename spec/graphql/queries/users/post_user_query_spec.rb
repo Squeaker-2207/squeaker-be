@@ -2,7 +2,7 @@ require 'rails_helper'
 
 module Queries  
   module Users 
-    RSpec.describe 'Fetch User Post Request', type: :request do
+    RSpec.describe 'Fetch User Post Request', :vcr, type: :request do
       let(:user) { create(:user) }
 
       it 'makes successful post request when fetching user' do
