@@ -2,7 +2,7 @@ require 'rails_helper'
 
 module Mutations
   module Squeaks
-    RSpec.describe AddSqueak, type: :request do
+    RSpec.describe AddSqueak, :vcr, type: :request do
       let(:user) { create(:user) }
       let(:content) { "Birds are a fiction created by Big Bird Seed" }
       let(:content1) { 'I really love mountain bluebirds' }
