@@ -50,7 +50,7 @@ module Mutations
           expect(message).to eq("Argument 'content' on InputObject 'SqueakInput' is required. Expected type String!")
         end
 
-        xit 'returns an error if squeak is not added' do
+        it 'returns an error if squeak is not added' do
           post graphql_path, params: { query: filtered_query }
           json = JSON.parse(response.body)
 

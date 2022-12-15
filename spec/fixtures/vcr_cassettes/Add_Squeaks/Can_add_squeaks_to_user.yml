@@ -17,8 +17,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 402
-      message: Payment Required
+      code: 200
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
@@ -27,22 +27,21 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 08 Dec 2022 23:54:02 GMT
+      - Thu, 15 Dec 2022 17:32:38 GMT
       Cache-Control:
       - no-store
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Error from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 422414d66021e4e123bcb2b5087f7042.cloudfront.net (CloudFront)
+      - 1.1 2e20768704c71ff3ce2e677251d27f3c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - SEA19-C1
       X-Amz-Cf-Id:
-      - uSjNdqZkyD-aVcLCy1qtRAUahC4hhy5V_O7kaOnHgkGLrDs0W-7K1g==
+      - iftBG5HUEPdt1exaiFK_yNsCCQb6JnlqNjLR0xkh9uuuYZV2o4ER3Q==
     body:
       encoding: ASCII-8BIT
-      string: '{"message":"Invoke limit for free plan exceeded; please upgrade your
-        plan"}'
-  recorded_at: Thu, 08 Dec 2022 23:54:02 GMT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9472456593657698}'
+  recorded_at: Thu, 15 Dec 2022 17:32:38 GMT
 recorded_with: VCR 6.1.0

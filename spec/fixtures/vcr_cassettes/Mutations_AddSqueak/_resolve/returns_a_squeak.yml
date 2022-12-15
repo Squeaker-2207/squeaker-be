@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"I really love mountain bluebirds"}'
+      string: '{"data":"Birds are a fiction created by Big Bird Seed"}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 15 Dec 2022 17:32:38 GMT
+      - Thu, 15 Dec 2022 17:32:32 GMT
       Cache-Control:
       - no-store
       Vary:
@@ -35,13 +35,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 331202b5b8aab67acbf389883133f256.cloudfront.net (CloudFront)
+      - 1.1 34f8ef0e4c880df0650a814412a26ea6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C1
       X-Amz-Cf-Id:
-      - ZsPOVWvi40DAkEL8VS6qm9idfkmMlo7dobMDtYUwOinRMQNiOtLCYA==
+      - tmolWuIPFpwVVMIu0IAfHEI4Y5U1Pw8SUDktvG12z8aVpT0q_48ogw==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Hate Speech","labelId":"label_w6rsaagh57vdq4c4","confidence":0.9249370662489179}'
-  recorded_at: Thu, 15 Dec 2022 17:32:38 GMT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9472456593657698}'
+  recorded_at: Thu, 15 Dec 2022 17:32:32 GMT
 recorded_with: VCR 6.1.0

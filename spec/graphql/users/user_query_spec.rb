@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Get One User by ID Query', :vcr do
+RSpec.describe 'Get One User by ID Query', vcr: { record: :new_episodes } do
   let(:user) { create(:user)}
   let(:squeaks) { create_list(:squeak, 5) }
 
