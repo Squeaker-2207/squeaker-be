@@ -4,7 +4,7 @@ class PerspectiveService
   end
 
   def self.post_probability(reported_squeak)
-    Rails.cache.fetch(reported_squeak) do
+    Rails.cache.fetch("#{reported_squeak}-content") do
       response = conn.post('/v1alpha1/comments:analyze?') do |req|
         req.params = { key: ENV['PERSPECTIVE_KEY'] }
         req.headers['Content-Type'] = 'application/json'
