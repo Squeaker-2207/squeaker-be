@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Update Squeak Mutation', :vcr do
+RSpec.describe 'Update Squeak Mutation', vcr: { record: :new_episodes } do
   let(:squeak) { create(:squeak, reports: 0, nuts: 1, approved: nil) }
 
   describe "reporting a squeak" do
@@ -51,7 +51,7 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
       expect(squeak_return.dig("nuts")).to eq(squeak.nuts)
     end
 
-    xit "a user cannot report a squeak more than once " do
+    it "a user cannot report a squeak more than once " do
       ##requires refactor before possible
       ##repeat previous steps twice to test, requires schema changes to succeed
 
@@ -114,7 +114,7 @@ RSpec.describe 'Update Squeak Mutation', :vcr do
       expect(squeak_return.dig("reports")).to eq(squeak.reports)
     end
 
-    xit 'cannot nut a squeak more than once' do
+    it 'cannot nut a squeak more than once' do
       ##currently planning to be handled by front end, best way to handle is described above
     end
 

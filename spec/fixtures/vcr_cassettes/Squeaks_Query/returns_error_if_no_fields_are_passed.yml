@@ -5,403 +5,7 @@ http_interactions:
     uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"Aliquam doloremque enim illum."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 15 Dec 2022 16:27:21 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 aabd01c4a20dae837d162bd972422efc.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - SEA19-C1
-      X-Amz-Cf-Id:
-      - 1Wze2biN6ny-0ViVeQwXC25Mjj34kUi6LuUOtiuJ_xCjvwRWG_Q2mw==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999888557753395}'
-  recorded_at: Thu, 15 Dec 2022 16:27:21 GMT
-- request:
-    method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Suscipit eius voluptate et."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 15 Dec 2022 16:27:21 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 599f04a365a179d553682d476509c388.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - SEA19-C1
-      X-Amz-Cf-Id:
-      - Dbq5RWgE1Du2zk8t2QnFOdbf-5P0Q3GuvDjwffJqXq5GRbiT7QuF5g==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9755811170979463}'
-  recorded_at: Thu, 15 Dec 2022 16:27:21 GMT
-- request:
-    method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Odio fugiat atque aut."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 15 Dec 2022 16:27:22 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 d16c3f15bd14953a9d4109eaaa991de2.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - SEA19-C1
-      X-Amz-Cf-Id:
-      - DfMpVLByMoXaVs_GCokqhi27xhP4t82yJTHZP5T37AAdJ_mKn8xI1w==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999968127405298}'
-  recorded_at: Thu, 15 Dec 2022 16:27:22 GMT
-- request:
-    method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Explicabo esse dolor dolores."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 15 Dec 2022 16:27:22 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 deaaf0548506de20925615eb51a7ea7e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - SEA19-C1
-      X-Amz-Cf-Id:
-      - fNORh-rUHINUDY1zhKZGxj-8u_nCkkvmAa7kwtrG-x08IJ5rpSfgBA==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999999710984133}'
-  recorded_at: Thu, 15 Dec 2022 16:27:22 GMT
-- request:
-    method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Odio iste ipsam commodi."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 15 Dec 2022 16:27:22 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 27a84054de24e45f952ea4056a821764.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - SEA19-C1
-      X-Amz-Cf-Id:
-      - mZnK9iq-dxKFEkoWIRkzp8wZ8Zaa0EkTaUtZWLBGBkH-HBESBSnQ6w==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9997557216903664}'
-  recorded_at: Thu, 15 Dec 2022 16:27:22 GMT
-- request:
-    method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Doloremque est soluta ut."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 15 Dec 2022 16:27:22 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 536063cb28bfc05fcb7a78183dd89b72.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - SEA19-C1
-      X-Amz-Cf-Id:
-      - 2dvCsAmPH224UaaBpvKAGOG-Keos4MWlUiTmEtZNSUZ2mKgitA0UUg==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999990964548683}'
-  recorded_at: Thu, 15 Dec 2022 16:27:22 GMT
-- request:
-    method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Ipsum occaecati omnis ut."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 15 Dec 2022 16:27:23 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 1f6e68152880a39d72e6bf2996cd6a60.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - SEA19-C1
-      X-Amz-Cf-Id:
-      - d6rx0i2rV_pSUJXibvUSr-j2vUNLCoOZfzpWlusI0U9Hwt8txZsgAA==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999933132576039}'
-  recorded_at: Thu, 15 Dec 2022 16:27:23 GMT
-- request:
-    method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Placeat inventore rerum rem."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 15 Dec 2022 16:27:23 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 27a84054de24e45f952ea4056a821764.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - SEA19-C1
-      X-Amz-Cf-Id:
-      - WSmf-Y-DTxNzT1To_ZrtDT56zVdJzpYwAZaGqFvTy_On205KuDAjTg==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9994727979739082}'
-  recorded_at: Thu, 15 Dec 2022 16:27:23 GMT
-- request:
-    method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Quisquam dolor illum ullam."}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 15 Dec 2022 16:27:23 GMT
-      Cache-Control:
-      - no-store
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 1ec2938341958d70d56193d709c89dee.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - SEA19-C1
-      X-Amz-Cf-Id:
-      - Vu119MlNJt2EDGlXbeGsV1YBBpMxTZ6nV0WUL6d9zu-VFCRM21hBzw==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999987637505007}'
-  recorded_at: Thu, 15 Dec 2022 16:27:23 GMT
-- request:
-    method: post
-    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
-    body:
-      encoding: UTF-8
-      string: '{"data":"Sed earum dicta sapiente."}'
+      string: '{"data":"Consectetur cupiditate nisi nostrum."}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -431,13 +35,409 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 536063cb28bfc05fcb7a78183dd89b72.cloudfront.net (CloudFront)
+      - 1.1 aa623e134417515bd2496cb01d5e5626.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C1
       X-Amz-Cf-Id:
-      - OdRlhENydOZuu9vc1eI5sl2w8kzi5zoP7742fgxxy8KYB83hJeG-ow==
+      - m1NOMhJp-fCms7e5xu1iM7xoCNk0r8BFDDA4HdM1CNgWw1GaNk91ag==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9998570230407828}'
-  recorded_at: Thu, 15 Dec 2022 16:27:23 GMT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.99999882281876}'
+  recorded_at: Thu, 15 Dec 2022 16:27:24 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Eveniet aut et minima."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 16:27:24 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 aabd01c4a20dae837d162bd972422efc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - 6uvueghfxtMqENYfvzxg9HRGSfpG3Yfmbd19wbyuR8vAYAmzRiUCwQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999681794126116}'
+  recorded_at: Thu, 15 Dec 2022 16:27:24 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Assumenda sit molestiae accusantium."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 16:27:24 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 44cd593d82a2d200a94217033c614c6a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - xLcKjg6LBc_TXiNCB_Idm9A6mAJrr3HzbWNtAJrycaQC6BTpcWjpsg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.994360320979548}'
+  recorded_at: Thu, 15 Dec 2022 16:27:24 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Autem et quaerat quia."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 16:27:25 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 34f8ef0e4c880df0650a814412a26ea6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - Ly7eZ3QL_tKR3_YOTCtGfjbjYO0owBUvaPRdiw5uUQtmOaoKdDO-Vg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999997554554372}'
+  recorded_at: Thu, 15 Dec 2022 16:27:25 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Recusandae libero dolore et."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 16:27:25 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 599f04a365a179d553682d476509c388.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - t5OzxxcKtW3tzaYsngV5BB1KiVtYji_6t5meHPZjxh81xhX3tYlRlQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.969896410029814}'
+  recorded_at: Thu, 15 Dec 2022 16:27:25 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Provident est iste illo."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 16:27:25 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 331202b5b8aab67acbf389883133f256.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - g2drk8Ywg5APG_cjuA4i-Ok_Q3VjmFkyn8Yr70hW0yuukvEtM-kV8w==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999972599574029}'
+  recorded_at: Thu, 15 Dec 2022 16:27:25 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Quis natus et quo."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 16:27:26 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 fec77e486350d1bd33f526a760d8b5a4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - VWkBAt8yn91iamnKk_4Zp1XaEjuFCpRWe0xbgMYAArQzaBMDEnz7yA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999856900153432}'
+  recorded_at: Thu, 15 Dec 2022 16:27:25 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Ratione architecto tenetur hic."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 16:27:26 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 b4085435efbe95a420f374958bd145be.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - dGhm9pvzGeJNX1xH7BwHv5KdoCukYYYJgQKbCRB_ZInE9kqRK5_xhw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.970166821656962}'
+  recorded_at: Thu, 15 Dec 2022 16:27:26 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Accusantium quam recusandae aut."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 16:27:26 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d16c3f15bd14953a9d4109eaaa991de2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - pjZVf-_AXMG3-41rmc3AX52kYWHHRReSn_aHD7IqH7cNgVd8-li9Lw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999999585141871}'
+  recorded_at: Thu, 15 Dec 2022 16:27:26 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Quos error rem unde."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 16:27:26 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 ec2a2c75c16156e4d43504606c118b90.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - Ppf8uIrFWLR5ttMKpJmS9LrQDhOTMoJEQ6_97uuCjssVBFXnABNxsA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999984884994993}'
+  recorded_at: Thu, 15 Dec 2022 16:27:26 GMT
 recorded_with: VCR 6.1.0

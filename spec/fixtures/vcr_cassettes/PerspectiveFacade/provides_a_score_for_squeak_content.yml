@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Veritatis eligendi a omnis."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"data":"The spice must flow"}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -21,64 +21,35 @@ http_interactions:
       message: OK
     headers:
       Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin
-      - Referer
-      - X-Origin
-      Date:
-      - Tue, 13 Dec 2022 21:26:49 GMT
-      Server:
-      - ESF
-      Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
-        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 17:01:10 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1949caaabae48a894fcd770a3e1384f6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - Tq5gWy3QxZ4xFc9Ju0gMrtf_L0Lx5_-I2VUGQcvcMrlLG1ZSU4uaWw==
     body:
       encoding: ASCII-8BIT
-      string: |
-        {
-          "attributeScores": {
-            "IDENTITY_ATTACK": {
-              "spanScores": [
-                {
-                  "begin": 0,
-                  "end": 27,
-                  "score": {
-                    "value": 0.000116196396,
-                    "type": "PROBABILITY"
-                  }
-                }
-              ],
-              "summaryScore": {
-                "value": 0.000116196396,
-                "type": "PROBABILITY"
-              }
-            }
-          },
-          "languages": [
-            "en"
-          ],
-          "detectedLanguages": [
-            "la"
-          ]
-        }
-  recorded_at: Tue, 13 Dec 2022 21:26:49 GMT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9992264523872536}'
+  recorded_at: Thu, 15 Dec 2022 17:01:10 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Veritatis eligendi a omnis."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"The spice must flow"},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -100,7 +71,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 21:26:49 GMT
+      - Thu, 15 Dec 2022 17:01:10 GMT
       Server:
       - ESF
       Cache-Control:
@@ -125,15 +96,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 27,
+                  "end": 19,
                   "score": {
-                    "value": 0.000116196396,
+                    "value": 0.010433395,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.000116196396,
+                "value": 0.010433395,
                 "type": "PROBABILITY"
               }
             }
@@ -142,8 +113,81 @@ http_interactions:
             "en"
           ],
           "detectedLanguages": [
-            "la"
+            "en"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 21:26:49 GMT
+  recorded_at: Thu, 15 Dec 2022 17:01:10 GMT
+- request:
+    method: post
+    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"comment":{"text":"The spice must flow"},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Thu, 15 Dec 2022 17:01:10 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "attributeScores": {
+            "IDENTITY_ATTACK": {
+              "spanScores": [
+                {
+                  "begin": 0,
+                  "end": 19,
+                  "score": {
+                    "value": 0.010433395,
+                    "type": "PROBABILITY"
+                  }
+                }
+              ],
+              "summaryScore": {
+                "value": 0.010433395,
+                "type": "PROBABILITY"
+              }
+            }
+          },
+          "languages": [
+            "en"
+          ],
+          "detectedLanguages": [
+            "en"
+          ]
+        }
+  recorded_at: Thu, 15 Dec 2022 17:01:10 GMT
 recorded_with: VCR 6.1.0

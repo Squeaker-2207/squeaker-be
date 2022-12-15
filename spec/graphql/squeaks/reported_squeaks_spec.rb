@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Reported Squeaks Query', :vcr do
+RSpec.describe 'Reported Squeaks Query', vcr: { record: :new_episodes } do
   let(:squeaks) { create_list(:squeak, 10) }
 
   it 'retrieves squeaks that have been reported' do

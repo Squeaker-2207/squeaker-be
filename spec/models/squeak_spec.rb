@@ -5,7 +5,7 @@ RSpec.describe Squeak, type: :model do
     it { should belong_to :user }
     it { should validate_presence_of :content }
 
-    xit 'validates that the content passes the Nyckel ML filter' do
+    it 'validates that the content passes the Nyckel ML filter' do
       new_squeak = build(:squeak)
       nyckel_response = {
         :labelName=>"Hate Speech",
@@ -20,7 +20,7 @@ RSpec.describe Squeak, type: :model do
     end
   end
 
-  describe 'model methods', :vcr do
+  describe 'model methods', vcr: { record: :new_episodes } do
     let(:squeaks) { create_list(:squeak, 5) }
 
     describe '::reported' do

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"I really love mountain bluebirds"}'
+      string: '{"data":"Dignissimos aut esse omnis."}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 15 Dec 2022 17:32:38 GMT
+      - Thu, 15 Dec 2022 16:27:42 GMT
       Cache-Control:
       - no-store
       Vary:
@@ -35,13 +35,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 331202b5b8aab67acbf389883133f256.cloudfront.net (CloudFront)
+      - 1.1 efcf7b9d0f917f9ebf314db03e52d9b6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C1
       X-Amz-Cf-Id:
-      - ZsPOVWvi40DAkEL8VS6qm9idfkmMlo7dobMDtYUwOinRMQNiOtLCYA==
+      - qHfDiXUtGvRmu1gzdYaO3M_UViZ-Igk4n1w5dhRh64Nxn1yCcuj0Ww==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Hate Speech","labelId":"label_w6rsaagh57vdq4c4","confidence":0.9249370662489179}'
-  recorded_at: Thu, 15 Dec 2022 17:32:38 GMT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999720822039145}'
+  recorded_at: Thu, 15 Dec 2022 16:27:42 GMT
 recorded_with: VCR 6.1.0

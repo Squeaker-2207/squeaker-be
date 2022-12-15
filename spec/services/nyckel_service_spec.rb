@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe NyckelService, :vcr do
+RSpec.describe NyckelService, vcr: { record: :new_episodes } do
   let(:squeak) { create(:squeak, reports: 0) }
 
   it 'retrieves a label for post content' do

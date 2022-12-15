@@ -2,10 +2,58 @@
 http_interactions:
 - request:
     method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"The absence of a thing, this can be as deadly as the presence.
+        The absence of air, eh? The absence of water? The absence of anything else
+        we''re addicted to."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 17:33:17 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d0387b833e3ca8cb748a1296b4b4bf2a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - ZEY_tt3D4PoRPh_UuGlU6TowjqzY2BQxh8wVJJ7UO9F8YdH08sc9kw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Hate Speech","labelId":"label_w6rsaagh57vdq4c4","confidence":0.6329022603190902}'
+  recorded_at: Thu, 15 Dec 2022 17:33:17 GMT
+- request:
+    method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Inventore deleniti dolorem architecto."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"The absence of a thing, this can be as deadly as
+        the presence. The absence of air, eh? The absence of water? The absence of
+        anything else we''re addicted to."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -27,7 +75,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 23:10:04 GMT
+      - Thu, 15 Dec 2022 17:33:18 GMT
       Server:
       - ESF
       Cache-Control:
@@ -52,15 +100,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 38,
+                  "end": 156,
                   "score": {
-                    "value": 0.0006520872,
+                    "value": 0.0024788564,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0006520872,
+                "value": 0.0024788564,
                 "type": "PROBABILITY"
               }
             }
@@ -69,16 +117,16 @@ http_interactions:
             "en"
           ],
           "detectedLanguages": [
-            "la"
+            "en"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 23:10:04 GMT
+  recorded_at: Thu, 15 Dec 2022 17:33:17 GMT
 - request:
     method: post
-    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Sed in eveniet voluptatibus."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"data":"The sleeper has awakened!"}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -94,64 +142,35 @@ http_interactions:
       message: OK
     headers:
       Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin
-      - Referer
-      - X-Origin
-      Date:
-      - Tue, 13 Dec 2022 23:10:04 GMT
-      Server:
-      - ESF
-      Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
-        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 17:33:18 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 2241406ac19fffc8f35d6ddef8e22f56.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - gCwPDYK22fc2cZ2ENwwr99oGbyX6SprVjjsP4lF2QJir4LprwskkGQ==
     body:
       encoding: ASCII-8BIT
-      string: |
-        {
-          "attributeScores": {
-            "IDENTITY_ATTACK": {
-              "spanScores": [
-                {
-                  "begin": 0,
-                  "end": 28,
-                  "score": {
-                    "value": 2.8760052e-05,
-                    "type": "PROBABILITY"
-                  }
-                }
-              ],
-              "summaryScore": {
-                "value": 2.8760052e-05,
-                "type": "PROBABILITY"
-              }
-            }
-          },
-          "languages": [
-            "en"
-          ],
-          "detectedLanguages": [
-            "la"
-          ]
-        }
-  recorded_at: Tue, 13 Dec 2022 23:10:04 GMT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.7034920373951817}'
+  recorded_at: Thu, 15 Dec 2022 17:33:18 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Ducimus quisquam id ipsa."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"The sleeper has awakened!"},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -173,7 +192,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 23:10:05 GMT
+      - Thu, 15 Dec 2022 17:33:18 GMT
       Server:
       - ESF
       Cache-Control:
@@ -200,13 +219,13 @@ http_interactions:
                   "begin": 0,
                   "end": 25,
                   "score": {
-                    "value": 0.0038292783,
+                    "value": 0.0047172266,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0038292783,
+                "value": 0.0047172266,
                 "type": "PROBABILITY"
               }
             }
@@ -215,16 +234,104 @@ http_interactions:
             "en"
           ],
           "detectedLanguages": [
-            "la"
+            "en"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 23:10:04 GMT
+  recorded_at: Thu, 15 Dec 2022 17:33:18 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"To save one from a mistake is a gift of paradise."}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 17:33:18 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 deaaf0548506de20925615eb51a7ea7e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - CMuOqbw_gTxUn5lwwicbJxmPGiy3IRJ-CYn9z64Yn2ZsNDkKYHpbOQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9968684441372397}'
+  recorded_at: Thu, 15 Dec 2022 17:33:18 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Bring in that floating fat man, the Baron!"}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 17:33:19 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 174acb08636ac7d9e9a778bbf1bcbc52.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - n_KAJ5NUxfytk0pUbhroveYKb0DYVElfv53H4zUNhMJJSr9vk3pKvw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9749798050001616}'
+  recorded_at: Thu, 15 Dec 2022 17:33:19 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Aperiam iure eaque nihil."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Bring in that floating fat man, the Baron!"},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -246,7 +353,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 23:10:05 GMT
+      - Thu, 15 Dec 2022 17:33:19 GMT
       Server:
       - ESF
       Cache-Control:
@@ -271,15 +378,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 25,
+                  "end": 42,
                   "score": {
-                    "value": 0.0011006863,
+                    "value": 0.17070955,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0011006863,
+                "value": 0.17070955,
                 "type": "PROBABILITY"
               }
             }
@@ -288,16 +395,61 @@ http_interactions:
             "en"
           ],
           "detectedLanguages": [
-            "la"
+            "en"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 23:10:04 GMT
+  recorded_at: Thu, 15 Dec 2022 17:33:19 GMT
+- request:
+    method: post
+    uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
+    body:
+      encoding: UTF-8
+      string: '{"data":"Behold as a wild ass in the desert go I forth to my work"}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 15 Dec 2022 17:33:19 GMT
+      Cache-Control:
+      - no-store
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 ef6538ee7be7b17c84d06edb0f4c0a1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C1
+      X-Amz-Cf-Id:
+      - JlnPZi41cwkIY1zpliHXd5OLFr-bC-BN9ifDMMhYeMKtTNDnvB4v9g==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9846996537303153}'
+  recorded_at: Thu, 15 Dec 2022 17:33:19 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Ea dignissimos non eveniet."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Behold as a wild ass in the desert go I forth to
+        my work"},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -319,7 +471,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 23:10:05 GMT
+      - Thu, 15 Dec 2022 17:33:19 GMT
       Server:
       - ESF
       Cache-Control:
@@ -344,15 +496,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 27,
+                  "end": 56,
                   "score": {
-                    "value": 0.0019701358,
+                    "value": 0.039456755,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0019701358,
+                "value": 0.039456755,
                 "type": "PROBABILITY"
               }
             }
@@ -361,16 +513,16 @@ http_interactions:
             "en"
           ],
           "detectedLanguages": [
-            "la"
+            "en"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 23:10:05 GMT
+  recorded_at: Thu, 15 Dec 2022 17:33:19 GMT
 - request:
     method: post
     uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
     body:
       encoding: UTF-8
-      string: '{"comment":{"text":"Vero sunt itaque doloribus."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
+      string: '{"comment":{"text":"Dolores molestiae voluptatem eaque."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -392,7 +544,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 13 Dec 2022 23:10:05 GMT
+      - Thu, 15 Dec 2022 18:05:30 GMT
       Server:
       - ESF
       Cache-Control:
@@ -417,15 +569,15 @@ http_interactions:
               "spanScores": [
                 {
                   "begin": 0,
-                  "end": 27,
+                  "end": 35,
                   "score": {
-                    "value": 0.0021828737,
+                    "value": 0.0020811295,
                     "type": "PROBABILITY"
                   }
                 }
               ],
               "summaryScore": {
-                "value": 0.0021828737,
+                "value": 0.0020811295,
                 "type": "PROBABILITY"
               }
             }
@@ -437,78 +589,5 @@ http_interactions:
             "la"
           ]
         }
-  recorded_at: Tue, 13 Dec 2022 23:10:05 GMT
-- request:
-    method: post
-    uri: https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=<PERSPECTIVE_KEY>
-    body:
-      encoding: UTF-8
-      string: '{"comment":{"text":"Tempore odio similique modi."},"languages":["en"],"requestedAttributes":{"IDENTITY_ATTACK":{}}}'
-    headers:
-      User-Agent:
-      - Faraday v2.7.1
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin
-      - Referer
-      - X-Origin
-      Date:
-      - Tue, 13 Dec 2022 23:10:05 GMT
-      Server:
-      - ESF
-      Cache-Control:
-      - private
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
-        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "attributeScores": {
-            "IDENTITY_ATTACK": {
-              "spanScores": [
-                {
-                  "begin": 0,
-                  "end": 28,
-                  "score": {
-                    "value": 0.050216515,
-                    "type": "PROBABILITY"
-                  }
-                }
-              ],
-              "summaryScore": {
-                "value": 0.050216515,
-                "type": "PROBABILITY"
-              }
-            }
-          },
-          "languages": [
-            "en"
-          ],
-          "detectedLanguages": [
-            "la"
-          ]
-        }
-  recorded_at: Tue, 13 Dec 2022 23:10:05 GMT
+  recorded_at: Thu, 15 Dec 2022 18:05:30 GMT
 recorded_with: VCR 6.1.0

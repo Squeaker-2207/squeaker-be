@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"Quibusdam fugit et aspernatur."}'
+      string: '{"data":"Asperiores autem magnam explicabo."}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sat, 10 Dec 2022 02:04:05 GMT
+      - Thu, 15 Dec 2022 16:27:27 GMT
       Cache-Control:
       - no-store
       Vary:
@@ -35,13 +35,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 824a5d9ed02451bcb68b15ae5991dce0.cloudfront.net (CloudFront)
+      - 1.1 6a6653dfb47ccc5082f2a5b9d0d168ce.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - SEA19-C1
       X-Amz-Cf-Id:
-      - X8tDwRjn1Fx4_iUukem9suXNoSeFaa46jOU6rD4y1EQHD2ONZ7Wr_A==
+      - IUxvwp9pMoOUzu8nG6CKRNeU3w2HC6KbmaC4ZBg8CewXyMhUZ49E9Q==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999928032440007}'
-  recorded_at: Sat, 10 Dec 2022 02:04:05 GMT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999934020795012}'
+  recorded_at: Thu, 15 Dec 2022 16:27:27 GMT
 recorded_with: VCR 6.1.0

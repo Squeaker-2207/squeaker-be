@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"Quia voluptas atque iste."}'
+      string: '{"data":"Non labore tempora maiores."}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 15 Dec 2022 16:27:55 GMT
+      - Thu, 15 Dec 2022 16:27:43 GMT
       Cache-Control:
       - no-store
       Vary:
@@ -35,21 +35,21 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 1ec2938341958d70d56193d709c89dee.cloudfront.net (CloudFront)
+      - 1.1 34f8ef0e4c880df0650a814412a26ea6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C1
       X-Amz-Cf-Id:
-      - qw8zgdi6o3RLzTXJFlUV2dzuO5R2b62BKcpGOv5lywwGVoHjZ_G2Nw==
+      - _sEOQJY_gLIABNah1f79Af7VufJ0V0mrDID61HCSMj4PF7cccWz_sw==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9974881846472521}'
-  recorded_at: Thu, 15 Dec 2022 16:27:55 GMT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9999999287778027}'
+  recorded_at: Thu, 15 Dec 2022 16:27:42 GMT
 - request:
     method: post
     uri: https://www.nyckel.com/v1/functions/<MODERATION_ID>/invoke
     body:
       encoding: UTF-8
-      string: '{"data":"Tempora aut assumenda distinctio."}'
+      string: '{"data":"Sit ullam voluptatum corporis."}'
     headers:
       User-Agent:
       - Faraday v2.7.1
@@ -71,7 +71,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 15 Dec 2022 18:03:25 GMT
+      - Thu, 15 Dec 2022 18:00:55 GMT
       Cache-Control:
       - no-store
       Vary:
@@ -79,13 +79,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 deaaf0548506de20925615eb51a7ea7e.cloudfront.net (CloudFront)
+      - 1.1 174acb08636ac7d9e9a778bbf1bcbc52.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C1
       X-Amz-Cf-Id:
-      - OU9PHO_tLX93ENHuZxZGCSOfKDj8ZN8HEvQwyNOVVMe3lIR0Jqzp-A==
+      - CaFbR0vGAxPNFs6WPrgg3Y0bbskMoACEyX66Bqd0a1iSqn2HxErdJw==
     body:
       encoding: ASCII-8BIT
-      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9948256547949746}'
-  recorded_at: Thu, 15 Dec 2022 18:03:25 GMT
+      string: '{"labelName":"Safe","labelId":"label_enceud4t4ul1w89f","confidence":0.9573243539585286}'
+  recorded_at: Thu, 15 Dec 2022 18:00:55 GMT
 recorded_with: VCR 6.1.0
